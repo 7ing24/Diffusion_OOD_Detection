@@ -1,0 +1,12 @@
+halfcheetah-medium-replay-v2
+Num_levels: 1
+Mean: 0.433001
+Std: 0.289222
+Variance: 0.083649
+Max: 2.936484
+Min: 0.006018
+Median: 0.360382
+90th_percentile: 0.819666
+95th_percentile: 1.016552
+99th_percentile: 1.427762
+

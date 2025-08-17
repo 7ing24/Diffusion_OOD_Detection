@@ -1,0 +1,15 @@
+{"time":"2025-08-17T16:15:05.675349436+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/autolab/wander/Diffusion_OOD_Detection/0_ood_action_detection/wandb/run-20250817_161505-6j9xa5b2/logs/debug-core.log"}
+{"time":"2025-08-17T16:15:06.845840062+08:00","level":"INFO","msg":"created new stream","id":"6j9xa5b2"}
+{"time":"2025-08-17T16:15:06.845907881+08:00","level":"INFO","msg":"stream: started","id":"6j9xa5b2"}
+{"time":"2025-08-17T16:15:06.845937881+08:00","level":"INFO","msg":"handler: started","stream_id":"6j9xa5b2"}
+{"time":"2025-08-17T16:15:06.845937344+08:00","level":"INFO","msg":"sender: started","stream_id":"6j9xa5b2"}
+{"time":"2025-08-17T16:15:06.846004346+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"6j9xa5b2"}
+{"time":"2025-08-17T16:15:07.700068227+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-17T16:16:06.939754746+08:00","level":"INFO","msg":"stream: closing","id":"6j9xa5b2"}
+{"time":"2025-08-17T16:16:06.939804407+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-17T16:16:06.939912403+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-17T16:16:08.578965178+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-17T16:16:09.768170517+08:00","level":"INFO","msg":"handler: closed","stream_id":"6j9xa5b2"}
+{"time":"2025-08-17T16:16:09.768212871+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"6j9xa5b2"}
+{"time":"2025-08-17T16:16:09.768257569+08:00","level":"INFO","msg":"sender: closed","stream_id":"6j9xa5b2"}
+{"time":"2025-08-17T16:16:09.768300852+08:00","level":"INFO","msg":"stream: closed","id":"6j9xa5b2"}

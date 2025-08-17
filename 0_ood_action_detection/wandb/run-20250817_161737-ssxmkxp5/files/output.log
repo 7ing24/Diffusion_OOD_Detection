@@ -1,0 +1,367 @@
+  2%|█▍                                                                    | 19996/1000000 [08:44<7:03:14, 38.59it/s]/home/autolab/anaconda3/envs/svr/lib/python3.9/site-packages/gym/spaces/box.py:84: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
+Time steps: 20000
+  logger.warn(f"Box bound precision lowered by casting to {self.dtype}")
+/home/autolab/anaconda3/envs/svr/lib/python3.9/site-packages/gym/core.py:172: DeprecationWarning: [33mWARN: Function `env.seed(seed)` is marked as deprecated and will be removed in the future. Please use `env.reset(seed=seed) instead.[0m
+  deprecation(
+---------------------------------------
+Evaluation over 10 episodes: 69.035, D4RL score: 2.813
+---------------------------------------
+/home/autolab/wander/Diffusion_OOD_Detection/0_ood_action_detection/main.py:69: UserWarning: Creating a tensor from a list of numpy.ndarrays is extremely slow. Please consider converting the list to a single numpy.ndarray with numpy.array() before converting to a tensor. (Triggered internally at /opt/conda/conda-bld/pytorch_1729647327249/work/torch/csrc/utils/tensor_new.cpp:278.)
+  returns = torch.FloatTensor(returns).unsqueeze(1).to(device)
+[Evaluation over 10 episodes]
+Monte Carlo Q: 322.367
+Predicted Q: 128.087
+Bias (Q_pred - MC): -194.280
+ 10%|██████▉                                                               | 99998/1000000 [44:21<6:43:15, 37.20it/s]
+Time steps: 40000
+---------------------------------------
+Evaluation over 10 episodes: 1586.323, D4RL score: 15.034
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 365.328
+Predicted Q: 235.738
+Bias (Q_pred - MC): -129.590
+Time steps: 60000
+---------------------------------------
+Evaluation over 10 episodes: 6024.517, D4RL score: 50.782
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 280.623
+Predicted Q: 246.744
+Bias (Q_pred - MC): -33.879
+Time steps: 80000
+---------------------------------------
+Evaluation over 10 episodes: 6205.383, D4RL score: 52.239
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 267.184
+Predicted Q: 296.083
+Bias (Q_pred - MC): 28.900
+Time steps: 100000
+---------------------------------------
+Evaluation over 10 episodes: 6748.729, D4RL score: 56.615
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 270.860
+Predicted Q: 288.760
+Bias (Q_pred - MC): 17.901
+Time steps: 120000
+---------------------------------------
+Evaluation over 10 episodes: 6958.967, D4RL score: 58.309
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 220.651
+Predicted Q: 261.221
+Bias (Q_pred - MC): 40.570
+Time steps: 140000
+---------------------------------------
+Evaluation over 10 episodes: 6946.230, D4RL score: 58.206
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 300.962
+Predicted Q: 371.613
+Bias (Q_pred - MC): 70.651
+Time steps: 160000
+---------------------------------------
+Evaluation over 10 episodes: 6849.986, D4RL score: 57.431
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 196.547
+Predicted Q: 300.379
+Bias (Q_pred - MC): 103.832
+Time steps: 180000
+---------------------------------------
+Evaluation over 10 episodes: 6927.070, D4RL score: 58.052
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 377.707
+Predicted Q: 407.056
+Bias (Q_pred - MC): 29.349
+Time steps: 200000
+---------------------------------------
+Evaluation over 10 episodes: 7066.345, D4RL score: 59.174
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 300.347
+Predicted Q: 360.562
+Bias (Q_pred - MC): 60.216
+Time steps: 220000
+---------------------------------------
+Evaluation over 10 episodes: 7009.944, D4RL score: 58.719
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 377.391
+Predicted Q: 413.355
+Bias (Q_pred - MC): 35.964
+Time steps: 240000
+---------------------------------------
+Evaluation over 10 episodes: 6858.025, D4RL score: 57.496
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 252.191
+Predicted Q: 320.821
+Bias (Q_pred - MC): 68.631
+Time steps: 260000
+---------------------------------------
+Evaluation over 10 episodes: 6780.437, D4RL score: 56.871
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 238.861
+Predicted Q: 292.009
+Bias (Q_pred - MC): 53.148
+Time steps: 280000
+---------------------------------------
+Evaluation over 10 episodes: 6658.730, D4RL score: 55.891
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 254.867
+Predicted Q: 334.547
+Bias (Q_pred - MC): 79.680
+Time steps: 300000
+---------------------------------------
+Evaluation over 10 episodes: 7100.759, D4RL score: 59.451
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 268.943
+Predicted Q: 336.791
+Bias (Q_pred - MC): 67.847
+Time steps: 320000
+---------------------------------------
+Evaluation over 10 episodes: 6633.739, D4RL score: 55.689
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 276.248
+Predicted Q: 332.599
+Bias (Q_pred - MC): 56.351
+Time steps: 340000
+---------------------------------------
+Evaluation over 10 episodes: 7192.283, D4RL score: 60.188
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 344.289
+Predicted Q: 414.428
+Bias (Q_pred - MC): 70.139
+Time steps: 360000
+---------------------------------------
+Evaluation over 10 episodes: 7016.686, D4RL score: 58.774
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 287.877
+Predicted Q: 361.289
+Bias (Q_pred - MC): 73.412
+Time steps: 380000
+---------------------------------------
+Evaluation over 10 episodes: 6990.159, D4RL score: 58.560
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 256.134
+Predicted Q: 329.698
+Bias (Q_pred - MC): 73.564
+Time steps: 400000
+---------------------------------------
+Evaluation over 10 episodes: 7022.464, D4RL score: 58.820
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 336.519
+Predicted Q: 390.813
+Bias (Q_pred - MC): 54.293
+Time steps: 420000
+---------------------------------------
+Evaluation over 10 episodes: 6976.922, D4RL score: 58.453
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 238.530
+Predicted Q: 299.601
+Bias (Q_pred - MC): 61.071
+Time steps: 440000
+---------------------------------------
+Evaluation over 10 episodes: 6913.566, D4RL score: 57.943
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 269.190
+Predicted Q: 339.217
+Bias (Q_pred - MC): 70.027
+Time steps: 460000
+---------------------------------------
+Evaluation over 10 episodes: 7002.751, D4RL score: 58.661
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 266.283
+Predicted Q: 365.594
+Bias (Q_pred - MC): 99.311
+Time steps: 480000
+---------------------------------------
+Evaluation over 10 episodes: 7082.016, D4RL score: 59.300
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 319.200
+Predicted Q: 380.666
+Bias (Q_pred - MC): 61.466
+Time steps: 500000
+---------------------------------------
+Evaluation over 10 episodes: 6835.463, D4RL score: 57.314
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 299.198
+Predicted Q: 362.158
+Bias (Q_pred - MC): 62.961
+Time steps: 520000
+---------------------------------------
+Evaluation over 10 episodes: 6923.755, D4RL score: 58.025
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 279.526
+Predicted Q: 374.949
+Bias (Q_pred - MC): 95.423
+Time steps: 540000
+---------------------------------------
+Evaluation over 10 episodes: 7068.685, D4RL score: 59.193
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 376.002
+Predicted Q: 429.885
+Bias (Q_pred - MC): 53.883
+Time steps: 560000
+---------------------------------------
+Evaluation over 10 episodes: 7023.189, D4RL score: 58.826
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 232.180
+Predicted Q: 360.823
+Bias (Q_pred - MC): 128.643
+Time steps: 580000
+---------------------------------------
+Evaluation over 10 episodes: 7105.878, D4RL score: 59.492
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 284.170
+Predicted Q: 360.355
+Bias (Q_pred - MC): 76.185
+Time steps: 600000
+---------------------------------------
+Evaluation over 10 episodes: 6972.292, D4RL score: 58.416
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 258.338
+Predicted Q: 340.588
+Bias (Q_pred - MC): 82.250
+Time steps: 620000
+---------------------------------------
+Evaluation over 10 episodes: 7077.630, D4RL score: 59.265
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 265.477
+Predicted Q: 384.508
+Bias (Q_pred - MC): 119.030
+Time steps: 640000
+---------------------------------------
+Evaluation over 10 episodes: 7051.241, D4RL score: 59.052
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 306.766
+Predicted Q: 386.137
+Bias (Q_pred - MC): 79.371
+Time steps: 660000
+---------------------------------------
+Evaluation over 10 episodes: 6972.984, D4RL score: 58.422
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 311.191
+Predicted Q: 412.124
+Bias (Q_pred - MC): 100.933
+Time steps: 680000
+---------------------------------------
+Evaluation over 10 episodes: 7011.521, D4RL score: 58.732
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 346.034
+Predicted Q: 423.498
+Bias (Q_pred - MC): 77.464
+Time steps: 700000
+---------------------------------------
+Evaluation over 10 episodes: 7013.621, D4RL score: 58.749
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 315.517
+Predicted Q: 378.279
+Bias (Q_pred - MC): 62.761
+Time steps: 720000
+---------------------------------------
+Evaluation over 10 episodes: 6999.046, D4RL score: 58.632
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 324.061
+Predicted Q: 387.775
+Bias (Q_pred - MC): 63.714
+Time steps: 740000
+---------------------------------------
+Evaluation over 10 episodes: 7091.036, D4RL score: 59.373
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 342.477
+Predicted Q: 420.970
+Bias (Q_pred - MC): 78.493
+Time steps: 760000
+---------------------------------------
+Evaluation over 10 episodes: 6917.986, D4RL score: 57.979
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 237.121
+Predicted Q: 308.947
+Bias (Q_pred - MC): 71.827
+Time steps: 780000
+---------------------------------------
+Evaluation over 10 episodes: 6967.633, D4RL score: 58.379
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 299.141
+Predicted Q: 361.855
+Bias (Q_pred - MC): 62.714
+Time steps: 800000
+---------------------------------------
+Evaluation over 10 episodes: 7028.592, D4RL score: 58.870
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 216.949
+Predicted Q: 323.168
+Bias (Q_pred - MC): 106.219
+Time steps: 820000
+---------------------------------------
+Evaluation over 10 episodes: 7012.435, D4RL score: 58.739
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 317.506
+Predicted Q: 393.430
+Bias (Q_pred - MC): 75.924
+Time steps: 840000
+---------------------------------------
+Evaluation over 10 episodes: 6943.401, D4RL score: 58.183
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 315.923
+Predicted Q: 376.243
+Bias (Q_pred - MC): 60.320
+Time steps: 860000
+---------------------------------------
+Evaluation over 10 episodes: 6979.818, D4RL score: 58.477
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 284.287
+Predicted Q: 384.396
+Bias (Q_pred - MC): 100.109
+Time steps: 880000
+---------------------------------------
+Evaluation over 10 episodes: 6948.374, D4RL score: 58.224
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 342.138
+Predicted Q: 397.406
+Bias (Q_pred - MC): 55.268
+Time steps: 900000
+---------------------------------------
+Evaluation over 10 episodes: 6961.596, D4RL score: 58.330
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 233.950
+Predicted Q: 357.141
+Bias (Q_pred - MC): 123.191
