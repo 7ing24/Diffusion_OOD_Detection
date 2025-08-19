@@ -1,0 +1,7 @@
+{"time":"2025-08-18T21:37:41.028655351+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/autolab/wander/Diffusion_OOD_Detection/3_pos_ood_compensation/wandb/run-20250818_213740-25i1hvlf/logs/debug-core.log"}
+{"time":"2025-08-18T21:37:42.146310341+08:00","level":"INFO","msg":"created new stream","id":"25i1hvlf"}
+{"time":"2025-08-18T21:37:42.146358965+08:00","level":"INFO","msg":"stream: started","id":"25i1hvlf"}
+{"time":"2025-08-18T21:37:42.146395435+08:00","level":"INFO","msg":"handler: started","stream_id":"25i1hvlf"}
+{"time":"2025-08-18T21:37:42.14639634+08:00","level":"INFO","msg":"sender: started","stream_id":"25i1hvlf"}
+{"time":"2025-08-18T21:37:42.146468148+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"25i1hvlf"}
+{"time":"2025-08-18T21:37:42.790237299+08:00","level":"INFO","msg":"Starting system monitor"}

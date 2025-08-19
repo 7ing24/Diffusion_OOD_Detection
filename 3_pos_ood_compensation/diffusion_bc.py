@@ -373,7 +373,7 @@ def train(args):
 
     state_distribution = ScoreNetwork(
         x_dim=state_dim,
-        hidden_dim=512,
+        hidden_dim=256,
         time_embed_dim=16,
         cond_dim=0,
         cond_mask_prob=0.0,
@@ -464,8 +464,8 @@ def train(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument('--env', type=str, default='halfcheetah-medium-replay-v2')
-    parser.add_argument('--ood_env', type=str, default='halfcheetah-medium-expert-v2')
+    parser.add_argument('--env', type=str, default='halfcheetah-medium-expert-v2')
+    parser.add_argument('--ood_env', type=str, default='halfcheetah-medium-replay-v2')
     parser.add_argument('--pretrain_epochs', type=int, default=100000)
     parser.add_argument('--device', type=int, default=0)
     parser.add_argument('--seed', type=int, default=0)

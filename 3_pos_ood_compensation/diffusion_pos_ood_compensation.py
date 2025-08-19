@@ -275,8 +275,8 @@ class Diffusion_pos_ood_compensation(object):
 
         critic_loss += reg_loss + vc_loss
 
-        print("value_s_pi", value_s_pi.mean().item())
-        print("value_s_in", value_s_in.mean().item())
+        # print("value_s_pi", value_s_pi.mean().item())
+        # print("value_s_in", value_s_in.mean().item())
         
         return critic_loss, reg_loss, vc_loss, current_Q, qmin, positive_ood_action_mask, negative_ood_action_mask, ood_action_mask
 

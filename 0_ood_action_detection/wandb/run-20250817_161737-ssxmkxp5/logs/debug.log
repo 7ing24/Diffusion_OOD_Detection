@@ -20,3 +20,4 @@ config: {'env': 'halfcheetah-medium-replay-v2', 'method': 'diffusion_ood_action_
 2025-08-17 16:17:39,945 INFO    MainThread:3486 [wandb_run.py:_redirect():2490] Wrapping output streams.
 2025-08-17 16:17:39,945 INFO    MainThread:3486 [wandb_run.py:_redirect():2513] Redirects installed.
 2025-08-17 16:17:39,947 INFO    MainThread:3486 [wandb_init.py:init():1150] run started, returning control to user process
+2025-08-18 01:00:47,912 INFO    MsgRouterThr:3486 [mailbox.py:close():129] [no run ID] Closing mailbox, abandoning 1 handles.

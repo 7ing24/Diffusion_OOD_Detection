@@ -224,7 +224,7 @@ if __name__ == "__main__":
 
     # Dynamics model
     dynamics_model = DynamicsModel(state_dim, action_dim).to(device)
-    dynamics_model_path = f'../Dynamics_models/{args.env}.pth'
+    dynamics_model_path = f'Dynamics_models/{args.env}.pth'
     assert os.path.exists(dynamics_model_path), f"Dynamics model {dynamics_model_path} not found!"
     dynamics_model.load_state_dict(torch.load(dynamics_model_path, map_location=device))
     dynamics_model.eval()
@@ -265,7 +265,7 @@ if __name__ == "__main__":
     agent = Diffusion_pos_ood_compensation(**kwargs)
 
     wandb.init(
-        project="OOD_detection",
+        project="Diffusion_OOD_detection",
         name = (f"{args.env}_{args.method}_beta{args.beta}_lam{args.lam}_omega{args.omega}_snlevels{args.state_n_levels}"
                 f"_anlevels{args.action_n_levels}_sthreshold{args.state_threshold}_athreshold{args.action_threshold}"
                 f"_expectile{args.expectile}_asamples{args.n_action_samples}_degree{args.comp_degree}_seed{args.seed}"),

@@ -1,0 +1,19 @@
+{"time":"2025-08-18T06:53:10.811559215+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/autolab/wander/Diffusion_OOD_Detection/3_pos_ood_compensation/wandb/run-20250818_065310-hf3ce82m/logs/debug-core.log"}
+{"time":"2025-08-18T06:53:11.879196716+08:00","level":"INFO","msg":"created new stream","id":"hf3ce82m"}
+{"time":"2025-08-18T06:53:11.879246969+08:00","level":"INFO","msg":"stream: started","id":"hf3ce82m"}
+{"time":"2025-08-18T06:53:11.879312447+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"hf3ce82m"}
+{"time":"2025-08-18T06:53:11.87933221+08:00","level":"INFO","msg":"handler: started","stream_id":"hf3ce82m"}
+{"time":"2025-08-18T06:53:11.879382402+08:00","level":"INFO","msg":"sender: started","stream_id":"hf3ce82m"}
+{"time":"2025-08-18T06:53:12.537785823+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-18T08:03:58.069777983+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:38180->104.21.20.172:443: read: connection reset by peer"}
+{"time":"2025-08-18T08:06:58.082235135+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:41488->104.21.20.172:443: read: connection reset by peer"}
+{"time":"2025-08-18T08:10:43.05966074+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:35158->104.21.20.172:443: read: connection reset by peer"}
+{"time":"2025-08-18T10:01:58.09785646+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:38298->172.67.193.61:443: read: connection reset by peer"}
+{"time":"2025-08-18T10:03:28.134372704+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:58414->104.21.20.172:443: read: connection reset by peer"}
+{"time":"2025-08-18T10:07:28.099895099+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:46690->104.21.20.172:443: read: connection reset by peer"}
+{"time":"2025-08-18T10:15:13.09709317+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:34984->104.21.20.172:443: read: connection reset by peer"}
+{"time":"2025-08-18T11:03:29.330108365+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/files/7ingw-tongji-university/OOD_detection/hf3ce82m/file_stream\": read tcp 192.168.3.24:56856->172.67.193.61:443: read: connection reset by peer"}
+{"time":"2025-08-18T11:03:43.165878135+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:41098->172.67.193.61:443: read: connection reset by peer"}
+{"time":"2025-08-18T11:06:43.202721256+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:37740->172.67.193.61:443: read: connection reset by peer"}
+{"time":"2025-08-18T12:01:58.226743707+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:55308->172.67.193.61:443: read: connection reset by peer"}
+{"time":"2025-08-18T14:49:28.299941109+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:55800->172.67.193.61:443: read: connection reset by peer"}

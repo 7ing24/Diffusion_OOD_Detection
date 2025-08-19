@@ -5,3 +5,19 @@
 {"time":"2025-08-17T23:20:13.402561089+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"6klfypjb"}
 {"time":"2025-08-17T23:20:13.40256111+08:00","level":"INFO","msg":"handler: started","stream_id":"6klfypjb"}
 {"time":"2025-08-17T23:20:14.051971903+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-18T00:08:44.412632582+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:45232->172.67.193.61:443: read: connection reset by peer"}
+{"time":"2025-08-18T00:09:29.574424167+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:44558->172.67.193.61:443: read: connection reset by peer"}
+{"time":"2025-08-18T00:18:44.391892626+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:38080->172.67.193.61:443: read: connection reset by peer"}
+{"time":"2025-08-18T00:19:29.58532783+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:56896->104.21.20.172:443: read: connection reset by peer"}
+{"time":"2025-08-18T01:04:44.595430109+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:50124->104.21.20.172:443: read: connection reset by peer"}
+{"time":"2025-08-18T01:06:29.567366651+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:43000->104.21.20.172:443: read: connection reset by peer"}
+{"time":"2025-08-18T01:07:59.645704922+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:56622->172.67.193.61:443: read: connection reset by peer"}
+{"time":"2025-08-18T01:23:37.885902529+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-18T01:23:37.886003817+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-18T01:23:38.887892698+08:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"updating run config","runtime_seconds":0.342511974}],"total_operations":1}}
+{"time":"2025-08-18T01:23:40.344097181+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-18T01:23:41.865700909+08:00","level":"INFO","msg":"stream: closing","id":"6klfypjb"}
+{"time":"2025-08-18T01:23:41.865719264+08:00","level":"INFO","msg":"handler: closed","stream_id":"6klfypjb"}
+{"time":"2025-08-18T01:23:41.865728618+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"6klfypjb"}
+{"time":"2025-08-18T01:23:41.865740772+08:00","level":"INFO","msg":"sender: closed","stream_id":"6klfypjb"}
+{"time":"2025-08-18T01:23:41.865782659+08:00","level":"INFO","msg":"stream: closed","id":"6klfypjb"}

@@ -20,3 +20,10 @@ config: {'env': 'halfcheetah-medium-replay-v2', 'ood_env': 'halfcheetah-medium-e
 2025-08-17 23:20:14,295 INFO    MainThread:32663 [wandb_run.py:_redirect():2490] Wrapping output streams.
 2025-08-17 23:20:14,295 INFO    MainThread:32663 [wandb_run.py:_redirect():2513] Redirects installed.
 2025-08-17 23:20:14,298 INFO    MainThread:32663 [wandb_init.py:init():1150] run started, returning control to user process
+2025-08-18 01:23:37,884 INFO    MainThread:32663 [wandb_run.py:_finish():2321] finishing run 7ingw-tongji-university/Diffusion-SD/6klfypjb
+2025-08-18 01:23:37,884 INFO    MainThread:32663 [wandb_run.py:_atexit_cleanup():2538] got exitcode: 0
+2025-08-18 01:23:37,885 INFO    MainThread:32663 [wandb_run.py:_restore():2520] restore
+2025-08-18 01:23:37,885 INFO    MainThread:32663 [wandb_run.py:_restore():2526] restore done
+2025-08-18 01:23:41,864 INFO    MainThread:32663 [wandb_run.py:_footer_history_summary_info():4188] rendering history
+2025-08-18 01:23:41,865 INFO    MainThread:32663 [wandb_run.py:_footer_history_summary_info():4220] rendering summary
+2025-08-18 01:23:41,865 INFO    MainThread:32663 [wandb_run.py:_footer_sync_info():4149] logging synced files

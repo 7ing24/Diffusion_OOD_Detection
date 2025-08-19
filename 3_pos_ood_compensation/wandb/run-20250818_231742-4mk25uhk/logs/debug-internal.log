@@ -1,0 +1,24 @@
+{"time":"2025-08-18T23:17:42.900780447+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/autolab/wander/Diffusion_OOD_Detection/3_pos_ood_compensation/wandb/run-20250818_231742-4mk25uhk/logs/debug-core.log"}
+{"time":"2025-08-18T23:17:44.134010492+08:00","level":"INFO","msg":"created new stream","id":"4mk25uhk"}
+{"time":"2025-08-18T23:17:44.134051361+08:00","level":"INFO","msg":"stream: started","id":"4mk25uhk"}
+{"time":"2025-08-18T23:17:44.134091999+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"4mk25uhk"}
+{"time":"2025-08-18T23:17:44.134102249+08:00","level":"INFO","msg":"handler: started","stream_id":"4mk25uhk"}
+{"time":"2025-08-18T23:17:44.134116098+08:00","level":"INFO","msg":"sender: started","stream_id":"4mk25uhk"}
+{"time":"2025-08-18T23:17:44.712629893+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-18T23:27:45.267460944+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:37650->172.67.193.61:443: read: connection reset by peer"}
+{"time":"2025-08-18T23:59:30.294725658+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:39966->104.21.20.172:443: read: connection reset by peer"}
+{"time":"2025-08-19T00:20:15.318347956+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:40910->104.21.20.172:443: read: connection reset by peer"}
+{"time":"2025-08-19T00:34:45.310335642+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:54622->172.67.193.61:443: read: connection reset by peer"}
+{"time":"2025-08-19T00:38:17.14575238+08:00","level":"INFO","msg":"api: retrying HTTP error","status":504,"url":"https://api.bandw.top/files/7ingw-tongji-university/Diffusion-SD/4mk25uhk/file_stream","body":"error code: 504"}
+{"time":"2025-08-19T00:40:00.306146968+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:45172->104.21.20.172:443: read: connection reset by peer"}
+{"time":"2025-08-19T00:43:00.33139172+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:57886->172.67.193.61:443: read: connection reset by peer"}
+{"time":"2025-08-19T02:06:45.394388339+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:55112->104.21.20.172:443: read: connection reset by peer"}
+{"time":"2025-08-19T03:12:57.770750474+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-19T03:12:57.770830694+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-19T03:12:58.772814641+08:00","level":"INFO","msg":"handler: operation stats","stats":{"operations":[{"desc":"updating run config","runtime_seconds":1.002536844}],"total_operations":1}}
+{"time":"2025-08-19T03:13:00.731842084+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-19T03:13:01.936705594+08:00","level":"INFO","msg":"stream: closing","id":"4mk25uhk"}
+{"time":"2025-08-19T03:13:01.936732612+08:00","level":"INFO","msg":"handler: closed","stream_id":"4mk25uhk"}
+{"time":"2025-08-19T03:13:01.936747757+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"4mk25uhk"}
+{"time":"2025-08-19T03:13:01.936806717+08:00","level":"INFO","msg":"sender: closed","stream_id":"4mk25uhk"}
+{"time":"2025-08-19T03:13:01.936854193+08:00","level":"INFO","msg":"stream: closed","id":"4mk25uhk"}

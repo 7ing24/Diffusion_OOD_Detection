@@ -1,0 +1,15 @@
+{"time":"2025-08-18T06:52:28.185147441+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/autolab/wander/Diffusion_OOD_Detection/3_pos_ood_compensation/wandb/run-20250818_065228-ag1a875k/logs/debug-core.log"}
+{"time":"2025-08-18T06:52:29.258066017+08:00","level":"INFO","msg":"created new stream","id":"ag1a875k"}
+{"time":"2025-08-18T06:52:29.258121109+08:00","level":"INFO","msg":"stream: started","id":"ag1a875k"}
+{"time":"2025-08-18T06:52:29.25817363+08:00","level":"INFO","msg":"handler: started","stream_id":"ag1a875k"}
+{"time":"2025-08-18T06:52:29.258180148+08:00","level":"INFO","msg":"sender: started","stream_id":"ag1a875k"}
+{"time":"2025-08-18T06:52:29.25823826+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"ag1a875k"}
+{"time":"2025-08-18T06:52:31.574163712+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-18T06:52:38.777290514+08:00","level":"INFO","msg":"stream: closing","id":"ag1a875k"}
+{"time":"2025-08-18T06:52:38.777332459+08:00","level":"INFO","msg":"Stopping system monitor"}
+{"time":"2025-08-18T06:52:38.777394119+08:00","level":"INFO","msg":"Stopped system monitor"}
+{"time":"2025-08-18T06:52:40.352505685+08:00","level":"INFO","msg":"fileTransfer: Close: file transfer manager closed"}
+{"time":"2025-08-18T06:52:41.772588938+08:00","level":"INFO","msg":"handler: closed","stream_id":"ag1a875k"}
+{"time":"2025-08-18T06:52:41.772649482+08:00","level":"INFO","msg":"writer: Close: closed","stream_id":"ag1a875k"}
+{"time":"2025-08-18T06:52:41.772680698+08:00","level":"INFO","msg":"sender: closed","stream_id":"ag1a875k"}
+{"time":"2025-08-18T06:52:41.77272569+08:00","level":"INFO","msg":"stream: closed","id":"ag1a875k"}

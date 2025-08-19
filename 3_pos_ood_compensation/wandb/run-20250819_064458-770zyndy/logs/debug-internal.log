@@ -1,0 +1,13 @@
+{"time":"2025-08-19T06:44:58.120120697+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/autolab/wander/Diffusion_OOD_Detection/3_pos_ood_compensation/wandb/run-20250819_064458-770zyndy/logs/debug-core.log"}
+{"time":"2025-08-19T06:44:59.219705768+08:00","level":"INFO","msg":"created new stream","id":"770zyndy"}
+{"time":"2025-08-19T06:44:59.21977131+08:00","level":"INFO","msg":"stream: started","id":"770zyndy"}
+{"time":"2025-08-19T06:44:59.219806752+08:00","level":"INFO","msg":"handler: started","stream_id":"770zyndy"}
+{"time":"2025-08-19T06:44:59.219823859+08:00","level":"INFO","msg":"sender: started","stream_id":"770zyndy"}
+{"time":"2025-08-19T06:44:59.219912837+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"770zyndy"}
+{"time":"2025-08-19T06:44:59.834391487+08:00","level":"INFO","msg":"Starting system monitor"}
+{"time":"2025-08-19T10:33:45.450026819+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:35272->104.21.20.172:443: read: connection reset by peer"}
+{"time":"2025-08-19T10:35:00.513819412+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:38264->172.67.193.61:443: read: connection reset by peer"}
+{"time":"2025-08-19T11:02:00.524078525+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:60212->172.67.193.61:443: read: connection reset by peer"}
+{"time":"2025-08-19T11:12:00.482667758+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:37804->104.21.20.172:443: read: connection reset by peer"}
+{"time":"2025-08-19T11:28:15.520386299+08:00","level":"INFO","msg":"api: retrying error","error":"Post \"https://api.bandw.top/graphql\": read tcp 192.168.3.24:60718->172.67.193.61:443: read: connection reset by peer"}
+{"time":"2025-08-19T11:32:02.003769332+08:00","level":"INFO","msg":"api: retrying HTTP error","status":504,"url":"https://api.bandw.top/files/7ingw-tongji-university/Diffusion_OOD_detection/770zyndy/file_stream","body":"error code: 504"}

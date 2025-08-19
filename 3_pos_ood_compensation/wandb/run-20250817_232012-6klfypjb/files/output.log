@@ -1,1 +1,2 @@
- 16%|███████████▌                                                           | 16265/100000 [20:38<1:46:48, 13.07it/s]
+100%|██████████████████████████████████████████████████████████████████████| 100000/100000 [2:03:23<00:00, 13.51it/s]
+Saved pre-trained state distribution model to ../Diffusion_models/sd_models/halfcheetah-medium-replay-v2.pth

@@ -1,0 +1,25 @@
+  0%|                                                                        | 1/100000 [00:06<177:49:45,  6.40s/it]
+Traceback (most recent call last):
+  File "/home/autolab/wander/Diffusion_OOD_Detection/3_pos_ood_compensation/diffusion_bc.py", line 513, in <module>
+    train(args)
+  File "/home/autolab/wander/Diffusion_OOD_Detection/3_pos_ood_compensation/diffusion_bc.py", line 427, in train
+    loss = diffusion_model.diffusion_train_step(state_distribution, batch_states, None)
+  File "../diffusion/karras.py", line 74, in diffusion_train_step
+    diffusion_loss = self.diffusion_loss(model, x, cond, t_chosen, noise, return_denoised)
+  File "../diffusion/karras.py", line 105, in diffusion_loss
+    model_output = model(x_1 * c_in, cond, t)
+  File "/home/autolab/anaconda3/envs/svr/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/autolab/anaconda3/envs/svr/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "../diffusion/mlps.py", line 138, in forward
+    x = self.layers(x)
+  File "/home/autolab/anaconda3/envs/svr/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/home/autolab/anaconda3/envs/svr/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1747, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "../diffusion/mlps.py", line 59, in forward
+    x = layer(x)
+  File "/home/autolab/anaconda3/envs/svr/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1736, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+KeyboardInterrupt

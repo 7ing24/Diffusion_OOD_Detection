@@ -365,3 +365,52 @@ Evaluation over 10 episodes: 6961.596, D4RL score: 58.330
 Monte Carlo Q: 233.950
 Predicted Q: 357.141
 Bias (Q_pred - MC): 123.191
+Time steps: 920000
+---------------------------------------
+Evaluation over 10 episodes: 6960.284, D4RL score: 58.319
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 366.419
+Predicted Q: 425.247
+Bias (Q_pred - MC): 58.827
+Time steps: 940000
+---------------------------------------
+Evaluation over 10 episodes: 6943.147, D4RL score: 58.181
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 298.540
+Predicted Q: 378.950
+Bias (Q_pred - MC): 80.410
+Time steps: 960000
+---------------------------------------
+Evaluation over 10 episodes: 6954.875, D4RL score: 58.276
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 262.249
+Predicted Q: 348.105
+Bias (Q_pred - MC): 85.856
+Time steps: 980000
+---------------------------------------
+Evaluation over 10 episodes: 6961.174, D4RL score: 58.327
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 319.924
+Predicted Q: 411.546
+Bias (Q_pred - MC): 91.622
+Time steps: 1000000
+---------------------------------------
+Evaluation over 10 episodes: 6951.145, D4RL score: 58.246
+---------------------------------------
+[Evaluation over 10 episodes]
+Monte Carlo Q: 297.062
+Predicted Q: 408.069
+Bias (Q_pred - MC): 111.007
+---------------------------------------
+Evaluation over 10 episodes: 6951.145, D4RL score: 58.246
+---------------------------------------
+  warnings.warn(
+/home/autolab/anaconda3/envs/svr/lib/python3.9/site-packages/scipy/sparse/sputils.py:44: DeprecationWarning: np.find_common_type is deprecated.  Please use `np.result_type` or `np.promote_types`.
+See https://numpy.org/devdocs/release/1.25.0-notes.html and the docs for more information.  (Deprecated NumPy 1.25)
+  upcast = np.find_common_type(args, [])
+State distribution visualization saved.
+100%|████████████████████████████████████████████████████████████████████| 1000000/1000000 [8:42:57<00:00, 31.87it/s]
