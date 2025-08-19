@@ -1,2 +1,0 @@
-100%|███████████████████████████████████████████████████████████████████████| 100000/100000 [45:12<00:00, 36.86it/s]
-Saved pre-trained behavior policy model to ../Diffusion_models/bc_models/halfcheetah-medium-replay-v2.pth

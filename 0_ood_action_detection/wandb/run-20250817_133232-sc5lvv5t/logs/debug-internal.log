@@ -1,7 +1,0 @@
-{"time":"2025-08-17T13:32:32.899927356+08:00","level":"INFO","msg":"stream: starting","core version":"0.19.11","symlink path":"/home/autolab/wander/Diffusion_OOD_Detection/0_ood_action_detection/wandb/run-20250817_133232-sc5lvv5t/logs/debug-core.log"}
-{"time":"2025-08-17T13:32:34.130142002+08:00","level":"INFO","msg":"created new stream","id":"sc5lvv5t"}
-{"time":"2025-08-17T13:32:34.130198793+08:00","level":"INFO","msg":"stream: started","id":"sc5lvv5t"}
-{"time":"2025-08-17T13:32:34.130238229+08:00","level":"INFO","msg":"sender: started","stream_id":"sc5lvv5t"}
-{"time":"2025-08-17T13:32:34.130239345+08:00","level":"INFO","msg":"writer: Do: started","stream_id":"sc5lvv5t"}
-{"time":"2025-08-17T13:32:34.130332058+08:00","level":"INFO","msg":"handler: started","stream_id":"sc5lvv5t"}
-{"time":"2025-08-17T13:32:34.839362195+08:00","level":"INFO","msg":"Starting system monitor"}
