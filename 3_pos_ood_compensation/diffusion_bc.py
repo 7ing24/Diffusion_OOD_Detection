@@ -476,7 +476,7 @@ if __name__ == "__main__":
     parser.add_argument("--sigma_min", type=float, default=0.002)
     parser.add_argument("--sigma_data", type=float, default=0.5)
     parser.add_argument("--action_n_levels", type=int, default=1)
-    parser.add_argument("--state_n_levels", type=int, default=10)
+    parser.add_argument("--state_n_levels", type=int, default=1)
 
     args = parser.parse_args()
 

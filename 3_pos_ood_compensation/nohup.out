@@ -1,35 +1,0 @@
-Warning: All of online environments libraries in D4RL have been moved ]8;;https://github.com/Farama-Foundation/Gymnasium\Gymnasium]8;;\, ]8;;https://github.com/Farama-Foundation/MiniGrid\MiniGrid]8;;\ and ]8;;https://github.com/Farama-Foundation/Gymnasium-Robotics\Gymnasium-Robotics]8;;\, and all offline datasets in D4RL have been moved to ]8;;https://github.com/Farama-Foundation/Minari\Minari]8;;\.
-These new versions include large bug fixes, new versions of Python, and are where all new development will continue. Please upgrade these libraries as soon as you're able to do so.
-If you'd like to read more about the story behind this switch, please check out ]8;;https://farama.org/Announcing-Minari\this blog post]8;;\.
-/home/autolab/anaconda3/envs/svr/lib/python3.9/site-packages/Cython/Distutils/old_build_ext.py:15: DeprecationWarning: dep_util is Deprecated. Use functions from setuptools instead.
-  from distutils.dep_util import newer, newer_group
-Warning: Flow failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
-No module named 'flow'
-/home/autolab/anaconda3/envs/svr/lib/python3.9/site-packages/glfw/__init__.py:917: GLFWError: (65550) b'X11: The DISPLAY environment variable is missing'
-  warnings.warn(message, GLFWError)
-Warning: CARLA failed to import. Set the environment variable D4RL_SUPPRESS_IMPORT_ERROR=1 to suppress this message.
-No module named 'carla'
-pybullet build time: Jan 29 2025 23:20:52
-/home/autolab/anaconda3/envs/svr/lib/python3.9/site-packages/pybullet_envs/env_bases.py:8: DeprecationWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html
-  from pkg_resources import parse_version
-/home/autolab/anaconda3/envs/svr/lib/python3.9/site-packages/pkg_resources/__init__.py:3142: DeprecationWarning: Deprecated call to `pkg_resources.declare_namespace('google')`.
-Implementing implicit namespace packages (as specified in PEP 420) is preferred to `pkg_resources.declare_namespace`. See https://setuptools.pypa.io/en/latest/references/keywords.html#keyword-namespace-packages
-  declare_namespace(pkg)
-/home/autolab/anaconda3/envs/svr/lib/python3.9/site-packages/scipy/__init__.py:146: UserWarning: A NumPy version >=1.16.5 and <1.23.0 is required for this version of SciPy (detected version 1.26.0
-  warnings.warn(f"A NumPy version >={np_minversion} and <{np_maxversion}"
-/home/autolab/anaconda3/envs/svr/lib/python3.9/site-packages/gym/spaces/box.py:84: UserWarning: [33mWARN: Box bound precision lowered by casting to float32[0m
-  logger.warn(f"Box bound precision lowered by casting to {self.dtype}")
-Loading dataset: hopper-medium-replay-v2
-load datafile:   0%|          | 0/11 [00:00<?, ?it/s]load datafile:  27%|██▋       | 3/11 [00:00<00:00, 21.41it/s]/home/autolab/anaconda3/envs/svr/lib/python3.9/site-packages/h5py/_hl/dataset.py:767: DeprecationWarning: Passing None into shape arguments as an alias for () is deprecated.
-  arr = numpy.ndarray(selection.mshape, dtype=new_dtype)
-load datafile:  64%|██████▎   | 7/11 [00:00<00:00, 22.07it/s]load datafile: 100%|██████████| 11/11 [00:00<00:00, 28.16it/s]load datafile: 100%|██████████| 11/11 [00:00<00:00, 26.26it/s]
-Traceback (most recent call last):
-  File "/home/autolab/wander/Diffusion_OOD_Detection/3_pos_ood_compensation/diffusion_bc.py", line 492, in <module>
-    train(args)
-  File "/home/autolab/wander/Diffusion_OOD_Detection/3_pos_ood_compensation/diffusion_bc.py", line 353, in train
-    states, actions = load_states_actions(args.env, args.no_normalize)
-  File "/home/autolab/wander/Diffusion_OOD_Detection/3_pos_ood_compensation/diffusion_bc.py", line 36, in load_states_actions
-    replay_buffer.convert_D4RL(d4rl.qlearning_dataset(env))
-  File "../utils.py", line 52, in convert_D4RL
-    torch.FloatTensor(self.state).to(self.device),
-KeyboardInterrupt
