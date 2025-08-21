@@ -57,8 +57,8 @@ def train(args):
     model = DynamicsModel(state_dim, action_dim).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=3e-4)
 
-    os.makedirs("Dynamics_models", exist_ok=True)
-    model_path = f"Dynamics_models/{args.env}.pth"
+    os.makedirs("../Dynamics_models", exist_ok=True)
+    model_path = f"../Dynamics_models/{args.env}.pth"
 
     if os.path.exists(model_path):
         print(f"Loading pre-trained dynamics model from {model_path}")

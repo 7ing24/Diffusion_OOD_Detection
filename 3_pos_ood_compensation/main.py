@@ -135,7 +135,7 @@ if __name__ == "__main__":
     # DoRL-VC original: \lam is the weighted coefficient of standard Bellman loss
     #                   0.4 for halfcheetah-medium-expert, 0.7 for halfcheetah-medium
     # Ours: \lam is the weighted coefficient of value compensation term
-    parser.add_argument("--lam", default=0.001, type=float)  
+    parser.add_argument("--lam", default=0.0006, type=float)  
     parser.add_argument("--omega", default=0.9, type=float)  # Weight for compensation
     parser.add_argument("--expectile", default=0.9, type=float)  
     parser.add_argument("--action_n_levels", default=1, type=int)  # Number of noise levels for action reconstruction error
@@ -224,7 +224,7 @@ if __name__ == "__main__":
 
     # Dynamics model
     dynamics_model = DynamicsModel(state_dim, action_dim).to(device)
-    dynamics_model_path = f'Dynamics_models/{args.env}.pth'
+    dynamics_model_path = f'../Dynamics_models/{args.env}.pth'
     assert os.path.exists(dynamics_model_path), f"Dynamics model {dynamics_model_path} not found!"
     dynamics_model.load_state_dict(torch.load(dynamics_model_path, map_location=device))
     dynamics_model.eval()

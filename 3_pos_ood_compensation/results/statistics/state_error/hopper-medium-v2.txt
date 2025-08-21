@@ -1,0 +1,12 @@
+hopper-medium-v2
+Num_levels: 1
+Mean: 1.031602
+Std: 0.864582
+Variance: 0.747502
+Max: 9.532185
+Min: 0.005270
+Median: 0.740066
+90th_percentile: 2.289781
+95th_percentile: 2.841777
+99th_percentile: 3.880498
+

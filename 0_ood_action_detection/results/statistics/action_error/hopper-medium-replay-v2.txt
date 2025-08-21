@@ -1,0 +1,12 @@
+hopper-medium-replay-v2
+Num_levels: 1
+Mean: 0.345840
+Std: 0.225878
+Variance: 0.051021
+Max: 2.318245
+Min: 0.001865
+Median: 0.296537
+90th_percentile: 0.650764
+95th_percentile: 0.782949
+99th_percentile: 1.069581
+
