@@ -48,7 +48,6 @@ def eval_policy(agent, env_name, seed, mean, std, return_states=False, seed_offs
         return d4rl_score, np.array(visit_states)
     return d4rl_score
 
-
 def eval_Q_function(agent, episode_buffer, discount, mean, std, eval_episodes=10):
     mc_returns = []
     q_preds = []
@@ -60,21 +59,22 @@ def eval_Q_function(agent, episode_buffer, discount, mean, std, eval_episodes=10
         rewards = episode["rewards"]
         dones = episode["dones"]
 
-        # MC returns
+        # Monte Carlo returns
         G = 0
         returns = []
         for r, d in zip(reversed(rewards), reversed(dones)):
             G = r + discount * G * (1. - d)  # reset if done
             returns.insert(0, G)
-        returns = torch.FloatTensor(returns).unsqueeze(1).to(device)
+        returns = torch.FloatTensor(returns).unsqueeze(1)
 
         # Q-function predictions
         with torch.no_grad():
             q1, q2, q3, q4 = agent.critic(states, actions)
             q_pred = torch.min(torch.min(q1, q2), torch.min(q3, q4))
 
-        mc_returns.append(returns)
-        q_preds.append(q_pred)
+        # **立即移到 CPU，避免 GPU 堆积**
+        mc_returns.append(returns.cpu())
+        q_preds.append(q_pred.cpu())
 
     mc_returns = torch.cat(mc_returns, dim=0)
     q_preds = torch.cat(q_preds, dim=0)

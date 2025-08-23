@@ -1,0 +1,12 @@
+walker2d-medium-expert-v2
+Num_levels: 1
+Mean: 0.323525
+Std: 0.157882
+Variance: 0.024927
+Max: 2.529320
+Min: 0.002005
+Median: 0.300751
+90th_percentile: 0.528840
+95th_percentile: 0.612353
+99th_percentile: 0.804803
+

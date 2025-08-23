@@ -139,7 +139,7 @@ if __name__ == "__main__":
     parser.add_argument("--omega", default=0.9, type=float)  # Weight for compensation
     parser.add_argument("--expectile", default=0.9, type=float)  
     parser.add_argument("--action_n_levels", default=1, type=int)  # Number of noise levels for action reconstruction error
-    parser.add_argument("--state_n_levels", default=1, type=int)  # Number of noise levels for state reconstruction error
+    parser.add_argument("--state_n_levels", default=10, type=int)  # Number of noise levels for state reconstruction error
     parser.add_argument("--n_action_samples", default=10, type=int)  # Number of ID action samples
     parser.add_argument("--comp_degree", default=1, type=float)
     args = parser.parse_args()
