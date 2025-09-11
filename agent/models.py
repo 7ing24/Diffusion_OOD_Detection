@@ -1,6 +1,7 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import numpy as np
 from torch.distributions import Normal
 
 class V_Network(nn.Module):
@@ -130,8 +131,21 @@ class TanhGaussianPolicy(nn.Module):
         self.max_action = max_action
 
     def forward(self, state, deterministic = False, need_log_prob = False):
+        if torch.isnan(state).any() or torch.isinf(state).any():
+            print("Warning: State contains NaN/Inf!")
+            
         hidden = self.actor(state)
+
+        if torch.isnan(hidden).any():
+            print("Warning: hidden contains NaN values!")
+
         mu, log_sigma = self.mu(hidden), self.log_sigma(hidden)
+
+        if torch.isnan(mu).any():
+            print("Warning: mu contains NaN values!")
+        if torch.isnan(log_sigma).any():
+            print("Warning: log_sigma contains NaN values!")
+
         log_sigma = torch.clamp(log_sigma, -5, 2)
         policy_dist = Normal(mu, torch.exp(log_sigma))
         
@@ -143,7 +157,10 @@ class TanhGaussianPolicy(nn.Module):
         tanh_action, log_prob = torch.tanh(action), None
         if need_log_prob:
             log_prob = policy_dist.log_prob(action).sum(axis=-1)
-            log_prob = log_prob - torch.log(1 - tanh_action.pow(2) + 1e-6).sum(axis=-1)
+            # log_prob = log_prob - torch.log(1 - tanh_action.pow(2) + 1e-6).sum(axis=-1)
+            epsilon = 1e-5
+            correction = torch.clamp(1 - tanh_action.pow(2), min=epsilon)
+            log_prob = log_prob - torch.log(correction).sum(axis=-1)
             log_prob = log_prob.unsqueeze(-1)
 
         return tanh_action * self.max_action, log_prob

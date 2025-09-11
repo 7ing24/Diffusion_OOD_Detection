@@ -286,8 +286,6 @@ def save_state_error(state_distribution, diffusion_model, states):
         "Max": np.max(state_error),
         "Min": np.min(state_error),
         "Median": np.median(state_error),
-        "80th_percentile": np.percentile(state_error, 80),
-        "85th_percentile": np.percentile(state_error, 85),
         "90th_percentile": np.percentile(state_error, 90),
         "95th_percentile": np.percentile(state_error, 95),
         "99th_percentile": np.percentile(state_error, 99)
@@ -325,8 +323,6 @@ def save_action_error(behavior_policy, diffusion_model, states, actions):
         "Max": np.max(action_error),
         "Min": np.min(action_error),
         "Median": np.median(action_error),
-        "80th_percentile": np.percentile(action_error, 80),
-        "85th_percentile": np.percentile(action_error, 85),
         "90th_percentile": np.percentile(action_error, 90),
         "95th_percentile": np.percentile(action_error, 95),
         "99th_percentile": np.percentile(action_error, 99)

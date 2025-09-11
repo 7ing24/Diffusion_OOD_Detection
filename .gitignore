@@ -1,2 +1,6 @@
 wandb/
 **/*.wandb
+__pycache__/
+*.pyc
+*.png
+*.pdf

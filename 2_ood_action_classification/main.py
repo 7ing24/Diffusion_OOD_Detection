@@ -12,7 +12,7 @@ sys.path.append(("../"))
 from tqdm import trange
 from utils import *
 from diffusion_bc import *
-from diffusion_pos_ood_compensation import *
+from diffusion_ood_action_classification import *
 from diffusion.karras import DiffusionModel
 from diffusion.mlps import ScoreNetwork
 from pretrain_dynamics import DynamicsModel
@@ -50,7 +50,7 @@ def eval_policy(agent, env_name, seed, mean, std, return_states=False, seed_offs
     return d4rl_score
 
 
-def eval_Q_function(agent, episode_buffer, discount, mean, std, eval_episodes=10):
+def eval_Q_function(agent, episode_buffer, discount, eval_episodes=10):
     mc_returns = []
     q_preds = []
 
@@ -61,22 +61,21 @@ def eval_Q_function(agent, episode_buffer, discount, mean, std, eval_episodes=10
         rewards = episode["rewards"]
         dones = episode["dones"]
 
-        # Monte Carlo returns
+        # MC returns
         G = 0
         returns = []
         for r, d in zip(reversed(rewards), reversed(dones)):
             G = r + discount * G * (1. - d)  # reset if done
             returns.insert(0, G)
-        returns = torch.FloatTensor(returns).unsqueeze(1)
+        returns = torch.FloatTensor(returns).unsqueeze(1).to(device)
 
         # Q-function predictions
         with torch.no_grad():
             q1, q2, q3, q4 = agent.critic(states, actions)
             q_pred = torch.min(torch.min(q1, q2), torch.min(q3, q4))
 
-        # **立即移到 CPU，避免 GPU 堆积**
-        mc_returns.append(returns.cpu())
-        q_preds.append(q_pred.cpu())
+        mc_returns.append(returns)
+        q_preds.append(q_pred)
 
     mc_returns = torch.cat(mc_returns, dim=0)
     q_preds = torch.cat(q_preds, dim=0)
@@ -88,7 +87,6 @@ def eval_Q_function(agent, episode_buffer, discount, mean, std, eval_episodes=10
     print(f"Bias (Q_pred - MC): {bias:.3f}")
 
     return mc_returns, q_preds
-
 
 
 def visualize_states(dataset_states, visit_states, env, n_samples=5000):
@@ -121,7 +119,7 @@ if __name__ == "__main__":
     
     parser = argparse.ArgumentParser()
     parser.add_argument("--env", default="halfcheetah-medium-replay-v2")
-    parser.add_argument("--method", default="diffusion_pos_ood_compensation")  # diffusion, cvae, svr
+    parser.add_argument("--method", default="diffusion_ood_action_classification")  # diffusion, cvae, svr
     parser.add_argument("--seed", default=0, type=int)
     parser.add_argument("--eval_freq", default=2e4, type=int)
     parser.add_argument("--eval_episodes", default=10, type=int)
@@ -134,11 +132,6 @@ if __name__ == "__main__":
     parser.add_argument("--no_normalize", action="store_true")
     parser.add_argument("--no_schedule", action="store_true")
     parser.add_argument("--beta", default=0.001, type=float)
-    # DoRL-VC original: \lam is the weighted coefficient of standard Bellman loss
-    #                   0.4 for halfcheetah-medium-expert, 0.7 for halfcheetah-medium
-    # Ours: \lam is the weighted coefficient of value compensation term
-    parser.add_argument("--lam", default=0.0006, type=float)  
-    parser.add_argument("--omega", default=0.9, type=float)  # Weight for compensation
     parser.add_argument("--expectile", default=0.9, type=float)  
     parser.add_argument("--action_n_levels", default=1, type=int)  # Number of noise levels for action reconstruction error
     parser.add_argument("--state_n_levels", default=10, type=int)  # Number of noise levels for state reconstruction error
@@ -257,20 +250,18 @@ if __name__ == "__main__":
         "state_threshold": args.state_threshold,
         "action_threshold": args.action_threshold,
         "beta": args.beta,
-        "lam": args.lam,
-        "omega": args.omega,
         "expectile": args.expectile,
         "n_action_samples": args.n_action_samples,
         "comp_degree": args.comp_degree
     }
 
-    agent = Diffusion_pos_ood_compensation(**kwargs)
+    agent = Diffusion_ood_action_classification(**kwargs)
 
     wandb.init(
         project="Diffusion_OOD_detection",
-        name = (f"{args.env}_{args.method}_beta{args.beta}_lam{args.lam}_omega{args.omega}_snlevels{args.state_n_levels}"
-                f"_anlevels{args.action_n_levels}_sthreshold{args.state_threshold}_athreshold{args.action_threshold}"
-                f"_expectile{args.expectile}_asamples{args.n_action_samples}_degree{args.comp_degree}_seed{args.seed}"),
+        name = (f"{args.env}_{args.method}_beta{args.beta}_snlevels{args.state_n_levels}_anlevels{args.action_n_levels}"
+                f"_sthreshold{args.state_threshold}_athreshold{args.action_threshold}_expectile{args.expectile}"
+                f"_asamples{args.n_action_samples}_degree{args.comp_degree}_seed{args.seed}"),
         config=vars(args)
     )
 
@@ -279,7 +270,7 @@ if __name__ == "__main__":
         if (t + 1) % args.eval_freq == 0:
             print(f"Time steps: {t+1}")
             d4rl_score = eval_policy(agent, args.env, args.seed, mean, std, eval_episodes=args.eval_episodes)
-            # mc_returns, q_preds = eval_Q_function(agent, episode_replay_buffer, args.discount, mean, std, eval_episodes=args.eval_episodes)
+            # mc_returns, q_preds = eval_Q_function(agent, episode_replay_buffer, args.discount, eval_episodes=args.eval_episodes)
             wandb.log({
                 "d4rl_score": d4rl_score,
                 # "Q_eval_comparison/MC Return": mc_returns.mean().item(),

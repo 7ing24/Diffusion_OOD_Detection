@@ -54,7 +54,7 @@ def get_threshold(model, diffusion_model, env, no_normalize, action_n_levels, ba
     states = torch.tensor(states, dtype=torch.float32, device=device)
     actions = torch.tensor(actions, dtype=torch.float32, device=device)
     errors = compute_multi_errors(model, diffusion_model, states, actions, action_n_levels, batch_size)
-    return np.percentile(errors, 99)
+    return np.percentile(errors, 80)
 
 
 # 单个噪声水平下的重构误差

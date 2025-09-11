@@ -13,7 +13,7 @@ D4RL_SUPPRESS_IMPORT_ERROR=1
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-class Diffusion_pos_ood_compensation(object):
+class Diffusion_ood_action_classification(object):
     def __init__(
             self, 
             state_dim, 
@@ -30,8 +30,6 @@ class Diffusion_pos_ood_compensation(object):
             state_threshold, 
             action_threshold,
             beta,
-            lam,
-            omega,
             expectile,
             n_action_samples,
             comp_degree,
@@ -75,15 +73,12 @@ class Diffusion_pos_ood_compensation(object):
         self.state_threshold = state_threshold
         self.action_threshold = action_threshold
         self.beta = beta
-        self.lam = lam
-        self.omega = omega
         self.expectile = expectile
         self.n_action_samples = n_action_samples
         self.comp_degree = comp_degree
         self.schedule = schedule
         if schedule:
             self.actor_lr_schedule = CosineAnnealingLR(self.actor_optimizer, int(int(1e6) / policy_freq))
-            # self.critic_lr_schedule = CosineAnnealingLR(self.critic_optimizer, int(int(1e6) / policy_freq))
         self.total_it = 0
 
 
@@ -215,7 +210,6 @@ class Diffusion_pos_ood_compensation(object):
         
         with torch.no_grad():
             next_action, next_action_log_prob = self.actor_target(next_state, need_log_prob=True)
-
             next_Q1, next_Q2, next_Q3, next_Q4 = self.critic_target(next_state, next_action)  
             next_Q = torch.min(torch.min(next_Q1, next_Q2), torch.min(next_Q3, next_Q4))
             next_Q = next_Q - self.alpha * next_action_log_prob
@@ -248,54 +242,34 @@ class Diffusion_pos_ood_compensation(object):
         # Predict next state s0
         pred_next_state = self.dynamics_model(state, pi)[..., :-1]  # [B, state_dim]
         value_s_pi = self.critic.v_min(pred_next_state)
-        best_id_action, best_id_q = self.select_best_id_action(state)  # [B, action_dim], [B]
-        best_id_q = best_id_q.unsqueeze(1)  # [B, 1]
+        best_id_action, _ = self.select_best_id_action(state)  # [B, action_dim], [B]
         best_id_next_state = self.dynamics_model(state, best_id_action)[..., :-1]  # [B, state_dim]
         value_s_in = self.critic.v_min(best_id_next_state)
 
         pred_next_state_error = self.compute_state_error(pred_next_state)
-
-        if torch.isnan(pi_error).any() or torch.isnan(pred_next_state_error).any():
-            print("Warning: Reconstruction error contains NaN values!")
         
         ood_action_mask = (pi_error > self.action_threshold)
         ood_next_state_mask = (pred_next_state_error > self.state_threshold)
         negative_value_mask = (value_s_pi < value_s_in * self.comp_degree).squeeze(-1)
-        positive_value_mask = (value_s_pi >= value_s_in * self.comp_degree).squeeze(-1)
         negative_ood_action_mask = (ood_action_mask & (ood_next_state_mask | negative_value_mask)).float().unsqueeze(1)
-        positive_ood_action_mask = (ood_action_mask & (~ood_next_state_mask) & positive_value_mask).float().unsqueeze(1)
 
         pi_Q1, pi_Q2, pi_Q3, pi_Q4 = self.critic(state, pi)
         pi_Q = torch.cat([pi_Q1, pi_Q2, pi_Q3, pi_Q4], dim=1)
         qmin = (self.Q_min * torch.ones_like(pi_Q)).detach()
 
         reg_loss = self.beta * (((pi_Q - qmin) ** 2) * negative_ood_action_mask).mean()
-
-        value_diff = (value_s_pi - value_s_in).clamp(min=0.0)
-        # value_diff = value_s_pi - value_s_in 
-        q_comp_target = self.omega * (best_id_q + value_diff).detach()
-
-        vc_loss = self.lam * (((pi_Q - q_comp_target) ** 2) * positive_ood_action_mask).mean()
-
-        # print("pi_Q mean/max:", pi_Q.mean().item(), pi_Q.max().item())
-        # print("q_comp_target mean/max:", q_comp_target.mean().item(), q_comp_target.max().item())
-
-        critic_loss += reg_loss + vc_loss
+        critic_loss += reg_loss
 
         # print("value_s_pi", value_s_pi.mean().item())
         # print("value_s_in", value_s_in.mean().item())
         
-        return critic_loss, reg_loss, vc_loss, current_Q, qmin, positive_ood_action_mask, negative_ood_action_mask, ood_action_mask, best_id_q, value_s_pi, value_s_in, pi_Q, pi_error, pred_next_state_error, positive_ood_action_mask, negative_ood_action_mask, q_comp_target
+        return critic_loss, reg_loss, current_Q, qmin, negative_ood_action_mask, ood_action_mask
 
 
     def train(self, batch_size=256):
         self.total_it += 1
 
         state, action, next_state, reward, not_done = self.replay_buffer.sample(batch_size)
-
-        if torch.isnan(state).any() or torch.isnan(action).any():
-            print("Warning: Input data contains NaN values!")
-            return
 
         # Alpha update
         alpha_loss = self.alpha_loss(state)
@@ -310,30 +284,25 @@ class Diffusion_pos_ood_compensation(object):
             actor_loss = self.actor_loss(state)
             self.actor_optimizer.zero_grad()
             actor_loss.backward()
-            torch.nn.utils.clip_grad_norm_(self.actor.parameters(), max_norm=1.0)
             self.actor_optimizer.step()
+
             if self.schedule:
                 self.actor_lr_schedule.step()
 
         # Critic update
-        critic_loss, reg_loss, vc_loss, current_Q, qmin, positive_ood_action_mask, negative_ood_action_mask, ood_action_mask, best_id_q, value_s_pi, value_s_in, pi_Q, pi_error, pred_next_state_error, positive_ood_action_mask, negative_ood_action_mask, q_comp_target = self.critic_loss(state, action, reward, next_state, not_done)
+        critic_loss, reg_loss, current_Q, qmin, negative_ood_action_mask, ood_action_mask = self.critic_loss(state, action, reward, next_state, not_done)
         self.critic_optimizer.zero_grad()
         critic_loss.backward()
-        torch.nn.utils.clip_grad_norm_(self.critic.parameters(), max_norm=1.0)
         self.critic_optimizer.step()
-        # if self.schedule:
-        #     self.critic_lr_schedule.step()
 
-        pos_mask = positive_ood_action_mask.float()
         neg_mask = negative_ood_action_mask.float()
         ood_mask = ood_action_mask.float() 
 
         ood_count = ood_mask.sum().item()
         if ood_count > 0:
-            pos_ratio = (pos_mask.sum() / ood_count).item()
             neg_ratio = (neg_mask.sum() / ood_count).item()
         else:
-            pos_ratio, neg_ratio = 0.0, 0.0
+            neg_ratio = 0.0
 
         # Target networks update
         if self.total_it % self.target_update_freq == 0:
@@ -366,7 +335,6 @@ class Diffusion_pos_ood_compensation(object):
 
                 wandb.log({"train/critic_loss": critic_loss.item(),
                             "train/reg_loss": reg_loss.item(),
-                            "train/vc_loss": vc_loss.item(),
                             "train/actor_loss": actor_loss.item(),
                             'Q/Qmin': qmin.mean().item(),
                             'Q/pi': Q_pi.mean().item(),
@@ -376,22 +344,6 @@ class Diffusion_pos_ood_compensation(object):
                             'Q/anoise0.5': Q_anoise5.mean().item(),
                             'Q/pinoise0.1': Q_pinoise1.mean().item(),
                             'Q/pinoise0.5': Q_pinoise5.mean().item(),
-                            "ood/pos_ratio": pos_ratio,
                             "ood/neg_ratio": neg_ratio,
                             "ood/count_total": ood_count
                             }, step=self.total_it)
-                
-                wandb.log({
-                    "debug/best_id_q_mean": best_id_q.mean().item(),
-                    "debug/best_id_q_max": best_id_q.max().item(),
-                    "debug/value_s_pi_mean": value_s_pi.mean().item(),
-                    "debug/value_s_in_mean": value_s_in.mean().item(),
-                    "debug/pi_Q_mean": pi_Q.mean().item(),
-                    "debug/pi_error_mean": pi_error.mean().item(),
-                    "debug/pred_next_state_error_mean": pred_next_state_error.mean().item(),
-                    "debug/pos_ood_count": positive_ood_action_mask.sum().item(),
-                    "debug/neg_ood_count": negative_ood_action_mask.sum().item(),
-                    "debug/q_comp_target_mean": q_comp_target.mean().item(),
-                    "debug/q_comp_target_max": q_comp_target.max().item()
-                }, step=self.total_it)
-                
