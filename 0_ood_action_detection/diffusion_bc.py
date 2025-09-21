@@ -204,6 +204,8 @@ def save_errors(behavior_policy, diffusion_model, states, actions):
         "Max": np.max(errors),
         "Min": np.min(errors),
         "Median": np.median(errors),
+        "80th_percentile": np.percentile(errors, 80),
+        "85th_percentile": np.percentile(errors, 85),
         "90th_percentile": np.percentile(errors, 90),
         "95th_percentile": np.percentile(errors, 95),
         "99th_percentile": np.percentile(errors, 99)

@@ -1,0 +1,14 @@
+antmaze-medium-play-v0
+Num_levels: 1
+Mean: 0.607286
+Std: 0.351190
+Variance: 0.123335
+Max: 4.340402
+Min: 0.003255
+Median: 0.527586
+80th_percentile: 0.837971
+85th_percentile: 0.932589
+90th_percentile: 1.065906
+95th_percentile: 1.289762
+99th_percentile: 1.792552
+

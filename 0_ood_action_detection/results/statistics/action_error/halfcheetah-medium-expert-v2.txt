@@ -1,0 +1,14 @@
+halfcheetah-medium-expert-v2
+Num_levels: 1
+Mean: 0.300432
+Std: 0.170351
+Variance: 0.029019
+Max: 3.181111
+Min: 0.002202
+Median: 0.266233
+80th_percentile: 0.417363
+85th_percentile: 0.460155
+90th_percentile: 0.518479
+95th_percentile: 0.616347
+99th_percentile: 0.854413
+

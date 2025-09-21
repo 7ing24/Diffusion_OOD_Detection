@@ -1,0 +1,14 @@
+hopper-medium-expert-v2
+Num_levels: 1
+Mean: 0.265491
+Std: 0.177243
+Variance: 0.031415
+Max: 1.891771
+Min: 0.000784
+Median: 0.227119
+80th_percentile: 0.395873
+85th_percentile: 0.443101
+90th_percentile: 0.506971
+95th_percentile: 0.609514
+99th_percentile: 0.828189
+

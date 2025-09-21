@@ -53,7 +53,7 @@ def get_state_threshold(state_distribution, diffusion_model, env, no_normalize, 
     states, _ = load_states_actions(env, no_normalize)
     states = torch.tensor(states, dtype=torch.float32, device=device)
     state_error = compute_state_error(state_distribution, diffusion_model, states, state_n_levels, batch_size)
-    return np.percentile(state_error, 99)
+    return np.percentile(state_error, 80)
 
 
 def get_action_threshold(behavior_model, diffusion_model, env, no_normalize, action_n_levels, batch_size):
@@ -61,7 +61,7 @@ def get_action_threshold(behavior_model, diffusion_model, env, no_normalize, act
     states = torch.tensor(states, dtype=torch.float32, device=device)
     actions = torch.tensor(actions, dtype=torch.float32, device=device)
     action_error = compute_action_error(behavior_model, diffusion_model, actions, states, action_n_levels, batch_size)
-    return np.percentile(action_error, 99)
+    return np.percentile(action_error, 80)
 
 
 def compute_state_error(state_distribution, diffusion_model, states, state_n_levels, batch_size=256):

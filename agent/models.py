@@ -157,10 +157,7 @@ class TanhGaussianPolicy(nn.Module):
         tanh_action, log_prob = torch.tanh(action), None
         if need_log_prob:
             log_prob = policy_dist.log_prob(action).sum(axis=-1)
-            # log_prob = log_prob - torch.log(1 - tanh_action.pow(2) + 1e-6).sum(axis=-1)
-            epsilon = 1e-5
-            correction = torch.clamp(1 - tanh_action.pow(2), min=epsilon)
-            log_prob = log_prob - torch.log(correction).sum(axis=-1)
+            log_prob = log_prob - torch.log(1 - tanh_action.pow(2) + 1e-6).sum(axis=-1)
             log_prob = log_prob.unsqueeze(-1)
 
         return tanh_action * self.max_action, log_prob

@@ -44,18 +44,18 @@ class Diffusion_pos_ood_compensation(object):
 
         self.actor = TanhGaussianPolicy(state_dim, action_dim, max_action).to(device)
         self.actor_target = copy.deepcopy(self.actor)
-        self.actor_optimizer = torch.optim.Adam(self.actor.parameters(), lr=1e-4)
+        self.actor_optimizer = torch.optim.Adam(self.actor.parameters(), lr=3e-4)
 
         self.critic = Critic(state_dim, action_dim).to(device)
         self.critic_target = copy.deepcopy(self.critic)
-        self.critic_optimizer = torch.optim.Adam(self.critic.parameters(), lr=1e-4)
+        self.critic_optimizer = torch.optim.Adam(self.critic.parameters(), lr=3e-4)
 
         # adaptive alpha setup
         self.target_entropy = -float(self.actor.action_dim)
         self.log_alpha = torch.tensor(
             [0.0], dtype=torch.float32, device=device, requires_grad=True
         )
-        self.alpha_optimizer = torch.optim.Adam([self.log_alpha], lr=1e-4)
+        self.alpha_optimizer = torch.optim.Adam([self.log_alpha], lr=3e-4)
         self.alpha = self.log_alpha.exp().detach()
 
         self.replay_buffer = replay_buffer
@@ -293,10 +293,6 @@ class Diffusion_pos_ood_compensation(object):
 
         state, action, next_state, reward, not_done = self.replay_buffer.sample(batch_size)
 
-        if torch.isnan(state).any() or torch.isnan(action).any():
-            print("Warning: Input data contains NaN values!")
-            return
-
         # Alpha update
         alpha_loss = self.alpha_loss(state)
         self.alpha_optimizer.zero_grad()
@@ -310,7 +306,7 @@ class Diffusion_pos_ood_compensation(object):
             actor_loss = self.actor_loss(state)
             self.actor_optimizer.zero_grad()
             actor_loss.backward()
-            torch.nn.utils.clip_grad_norm_(self.actor.parameters(), max_norm=1.0)
+            # torch.nn.utils.clip_grad_norm_(self.actor.parameters(), max_norm=1.0)
             self.actor_optimizer.step()
             if self.schedule:
                 self.actor_lr_schedule.step()
@@ -319,7 +315,7 @@ class Diffusion_pos_ood_compensation(object):
         critic_loss, reg_loss, vc_loss, current_Q, qmin, positive_ood_action_mask, negative_ood_action_mask, ood_action_mask, best_id_q, value_s_pi, value_s_in, pi_Q, pi_error, pred_next_state_error, positive_ood_action_mask, negative_ood_action_mask, q_comp_target = self.critic_loss(state, action, reward, next_state, not_done)
         self.critic_optimizer.zero_grad()
         critic_loss.backward()
-        torch.nn.utils.clip_grad_norm_(self.critic.parameters(), max_norm=1.0)
+        # torch.nn.utils.clip_grad_norm_(self.critic.parameters(), max_norm=1.0)
         self.critic_optimizer.step()
         # if self.schedule:
         #     self.critic_lr_schedule.step()
@@ -380,18 +376,4 @@ class Diffusion_pos_ood_compensation(object):
                             "ood/neg_ratio": neg_ratio,
                             "ood/count_total": ood_count
                             }, step=self.total_it)
-                
-                wandb.log({
-                    "debug/best_id_q_mean": best_id_q.mean().item(),
-                    "debug/best_id_q_max": best_id_q.max().item(),
-                    "debug/value_s_pi_mean": value_s_pi.mean().item(),
-                    "debug/value_s_in_mean": value_s_in.mean().item(),
-                    "debug/pi_Q_mean": pi_Q.mean().item(),
-                    "debug/pi_error_mean": pi_error.mean().item(),
-                    "debug/pred_next_state_error_mean": pred_next_state_error.mean().item(),
-                    "debug/pos_ood_count": positive_ood_action_mask.sum().item(),
-                    "debug/neg_ood_count": negative_ood_action_mask.sum().item(),
-                    "debug/q_comp_target_mean": q_comp_target.mean().item(),
-                    "debug/q_comp_target_max": q_comp_target.max().item()
-                }, step=self.total_it)
                 

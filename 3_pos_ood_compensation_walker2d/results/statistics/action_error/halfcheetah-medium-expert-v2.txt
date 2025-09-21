@@ -1,0 +1,24 @@
+halfcheetah-medium-expert-v2
+Num_levels: 1
+Mean: 0.300540
+Std: 0.170401
+Variance: 0.029037
+Max: 2.657565
+Min: 0.001790
+Median: 0.266278
+90th_percentile: 0.518578
+95th_percentile: 0.616063
+99th_percentile: 0.855679
+
+halfcheetah-medium-expert-v2
+Num_levels: 1
+Mean: 0.300601
+Std: 0.170302
+Variance: 0.029003
+Max: 3.119620
+Min: 0.002892
+Median: 0.266442
+90th_percentile: 0.518583
+95th_percentile: 0.616337
+99th_percentile: 0.854481
+

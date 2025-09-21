@@ -10,3 +10,17 @@ Median: 1.108904
 95th_percentile: 3.385258
 99th_percentile: 4.509970
 
+halfcheetah-medium-v2
+Num_levels: 1
+Mean: 1.384841
+Std: 0.964098
+Variance: 0.929485
+Max: 14.434833
+Min: 0.006234
+Median: 1.108115
+80th_percentile: 2.012085
+85th_percentile: 2.321540
+90th_percentile: 2.749247
+95th_percentile: 3.380301
+99th_percentile: 4.512742
+

@@ -163,6 +163,9 @@ if __name__ == "__main__":
         Q_min = -471
     elif "pen" in args.env:
         Q_min = -715
+    elif "antmaze" in args.env:
+        Q_min = -200
+        replay_buffer.antmaze_reward_tune()
 
     if not args.no_normalize:
         mean, std = replay_buffer.normalize_states()

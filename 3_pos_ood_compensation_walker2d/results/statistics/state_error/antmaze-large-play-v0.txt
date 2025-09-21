@@ -1,0 +1,14 @@
+antmaze-large-play-v0
+Num_levels: 1
+Mean: 1.865355
+Std: 1.363526
+Variance: 1.859204
+Max: 10.277647
+Min: 0.011843
+Median: 1.489510
+80th_percentile: 2.884077
+85th_percentile: 3.334577
+90th_percentile: 3.927319
+95th_percentile: 4.726818
+99th_percentile: 5.949898
+

@@ -64,6 +64,11 @@ class ReplayBuffer(object):
 		self.next_state = (self.next_state - mean)/std
 		return mean, std
     
+	def antmaze_reward_tune(self):
+		self.reward = (self.reward - 0.5) * 4.0  # cql_antmaze
+		# self.reward = reward = reward - 1.0  # iql_antmaze
+		# reward = (reward - 0.25) * 2.0  # antmaze
+    
 
 class EpisodeReplayBuffer:
     def __init__(self, replay_buffer, episode_length=1000):

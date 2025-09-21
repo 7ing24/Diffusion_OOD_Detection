@@ -1,0 +1,28 @@
+antmaze-medium-play-v2
+Num_levels: 1
+Mean: 0.607582
+Std: 0.350522
+Variance: 0.122866
+Max: 3.946512
+Min: 0.003392
+Median: 0.528222
+80th_percentile: 0.837418
+85th_percentile: 0.932265
+90th_percentile: 1.064506
+95th_percentile: 1.287438
+99th_percentile: 1.790825
+
+antmaze-medium-play-v2
+Num_levels: 1
+Mean: 0.607212
+Std: 0.350042
+Variance: 0.122530
+Max: 4.043474
+Min: 0.003177
+Median: 0.527750
+80th_percentile: 0.837602
+85th_percentile: 0.932191
+90th_percentile: 1.064154
+95th_percentile: 1.286657
+99th_percentile: 1.786369
+

@@ -1,0 +1,24 @@
+antmaze-umaze-v0
+Num_levels: 1
+Mean: 0.591603
+Std: 0.337216
+Variance: 0.113715
+Max: 4.229043
+Min: 0.003274
+Median: 0.515740
+90th_percentile: 1.029996
+95th_percentile: 1.245223
+99th_percentile: 1.733824
+
+antmaze-umaze-v0
+Num_levels: 10
+Mean: 0.591522
+Std: 0.202656
+Variance: 0.041070
+Max: 2.568037
+Min: 0.138467
+Median: 0.557914
+90th_percentile: 0.856797
+95th_percentile: 0.969187
+99th_percentile: 1.224159
+
