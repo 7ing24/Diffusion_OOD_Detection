@@ -9,7 +9,7 @@ os.makedirs("training_curves", exist_ok=True)
 api = wandb.Api()
 
 entity = "7ingw-tongji-university"     
-project = "ablation_on_beta"  
+project = "ablation_on_lam"  
 project_path = f"{entity}/{project}"
 
 envs = [
@@ -18,7 +18,7 @@ envs = [
     "halfcheetah-medium-expert-v2",
 ]
 
-beta_values = [0.00001, 0.0001, 0.001, 0.01, 0.1, 1]
+lam_values = [0.0001, 0.001, 0.01, 0.1, 0.5]
 
 title_map = {
     "halfcheetah-medium-v2": "medium",
@@ -27,12 +27,11 @@ title_map = {
 }
 
 legend_map = {
-    1: r"$\beta=1$",
-    0.1: r"$\beta=10^{-1}$",
-    0.01: r"$\beta=10^{-2}$",
-    0.001: r"$\beta=10^{-3}$",
-    0.0001: r"$\beta=10^{-4}$",
-    0.00001: r"$\beta=10^{-5}$",
+    0.5: r"$\lambda=0.5$",
+    0.1: r"$\lambda=0.1$",
+    0.01: r"$\lambda=0.01$",
+    0.001: r"$\lambda=0.001$",
+    0.0001: r"$\lambda=0.0001$",
 }
 
 fig, axes = plt.subplots(1, 3, figsize=(12, 4), sharey=False, constrained_layout=True)
@@ -40,29 +39,29 @@ fig, axes = plt.subplots(1, 3, figsize=(12, 4), sharey=False, constrained_layout
 for idx, env in enumerate(envs):
     runs = api.runs(
         project_path,
-        filters={"config.env": env, "config.method": "diffusion_ood_action_detection", "state": "finished"}
+        filters={"config.env": env, "config.method": "diffusion_pos_ood_compensation", "state": "finished"}
     )
     print(f"{len(runs)} runs on {env}")
 
     grouped_histories = {}
     for run in runs:
-        beta = run.config.get("beta", None)
-        if beta not in beta_values:
+        lam = run.config.get("lam", None)
+        if lam not in lam_values:
             continue
         history = run.history(samples=100000, keys=["_step", "d4rl_score"])
         history = history.dropna(subset=["_step", "d4rl_score"])
         steps = history["_step"].to_numpy()
         scores = history["d4rl_score"].to_numpy()
-        if beta not in grouped_histories:
-            grouped_histories[beta] = []
-        grouped_histories[beta].append((steps, scores))
+        if lam not in grouped_histories:
+            grouped_histories[lam] = []
+        grouped_histories[lam].append((steps, scores))
 
     ax = axes[idx]
 
-    for beta in beta_values:
-        if beta not in grouped_histories:
+    for lam in lam_values:
+        if lam not in grouped_histories:
             continue
-        histories = grouped_histories[beta]
+        histories = grouped_histories[lam]
         valid_histories = [h for h in histories if len(h[1]) > 0]
         if not valid_histories:
             continue
@@ -76,7 +75,7 @@ for idx, env in enumerate(envs):
         max_v = np.max(all_scores, axis=0)
 
         if idx == 0:
-            ax.plot(steps, mean, label=legend_map[beta], alpha=1)
+            ax.plot(steps, mean, label=legend_map[lam], alpha=1)
         else:
             ax.plot(steps, mean, alpha=1)
 
@@ -89,6 +88,6 @@ for idx, env in enumerate(envs):
         ax.legend(fontsize=14)
     ax.set_title(title_map[env], fontsize=18)
 
-plt.savefig("training_curves/ablation_on_beta.pdf")
+plt.savefig("training_curves/ablation_on_lam.pdf")
 plt.close()
-print("Plot saved to training_curves/ablation_on_beta.pdf")
+print("Plot saved to training_curves/ablation_on_lam.pdf")

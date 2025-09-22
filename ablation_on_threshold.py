@@ -24,6 +24,12 @@ custom_groups = {
     }
 }
 
+title_map = {
+    "halfcheetah-medium-v2": "medium",
+    "halfcheetah-medium-replay-v2": "medium-replay",
+    "halfcheetah-medium-expert-v2": "medium-expert",
+}
+
 fig, axes = plt.subplots(1, 3, figsize=(12, 4), sharey=False, constrained_layout=True)
 
 for idx, (dataset, groups) in enumerate(custom_groups.items()):
@@ -54,11 +60,11 @@ for idx, (dataset, groups) in enumerate(custom_groups.items()):
         ax.fill_between(steps, min_v, max_v, alpha=0.2)
 
     ax.xaxis.set_major_formatter(ticker.FuncFormatter(lambda x, _: f"{x/1e6:.1f}"))
-    ax.set_xlabel("Gradient Steps (×1e6)", fontsize=15)
+    ax.set_xlabel("Gradient Steps (×1e6)", fontsize=18)
     if idx == 0: 
-        ax.set_ylabel("Normalized Score", fontsize=15)
-        ax.legend(fontsize=12)
-    ax.set_title(dataset, fontsize=15)
+        ax.set_ylabel("Normalized Score", fontsize=18)
+        ax.legend(fontsize=14)
+    ax.set_title(title_map[dataset], fontsize=18)
 
 # handles, labels = axes[0].get_legend_handles_labels()
 # fig.legend(handles, labels, loc="upper center", ncol=3, fontsize=15)
