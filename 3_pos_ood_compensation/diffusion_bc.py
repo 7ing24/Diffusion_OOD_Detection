@@ -129,7 +129,7 @@ def compute_action_error(behavior_model, diffusion_model, actions, states, actio
     return torch.cat(recon_errors).numpy()
 
 
-def visualize_state_error(orig_states, ood_states, orig_errors, ood_errors, env_name, ood_env_name):
+# def visualize_state_error(orig_states, ood_states, orig_errors, ood_errors, env_name, ood_env_name):
     all_states = np.vstack([orig_states, ood_states])
 
     global_min = min(orig_errors.min(), ood_errors.min())
@@ -151,8 +151,8 @@ def visualize_state_error(orig_states, ood_states, orig_errors, ood_errors, env_
                 c='blue', s=5, alpha=0.6, label=env_name)
     axs[0].scatter(ood_embeddings[:, 0], ood_embeddings[:, 1], 
                 c='red', s=5, alpha=0.6, label=ood_env_name)
-    axs[0].set_title(f'State Distribution')
-    axs[0].legend()
+    axs[0].set_title(f'State Distribution', fontsize=20)
+    axs[0].legend(fontsize=16)
     axs[0].set_xlim(x_min, x_max)
     axs[0].set_ylim(y_min, y_max)
     axs[0].set_aspect('equal')
@@ -162,7 +162,7 @@ def visualize_state_error(orig_states, ood_states, orig_errors, ood_errors, env_
     sc1 = axs[1].scatter(orig_embeddings[:, 0], orig_embeddings[:, 1], 
                       c=orig_errors, cmap='viridis', s=5, alpha=0.7,
                       vmin=global_min, vmax=global_max)
-    axs[1].set_title(f'{env_name}\nStates Reconstruction Error')
+    axs[1].set_title(f'{env_name}\nStates Reconstruction Error', fontsize=20)
     axs[1].set_xlim(x_min, x_max)
     axs[1].set_ylim(y_min, y_max)
     axs[1].set_aspect('equal')
@@ -172,18 +172,18 @@ def visualize_state_error(orig_states, ood_states, orig_errors, ood_errors, env_
     sc2 = axs[2].scatter(ood_embeddings[:, 0], ood_embeddings[:, 1],
                       c=ood_errors, cmap='viridis', s=5, alpha=0.7,
                       vmin=global_min, vmax=global_max)
-    axs[2].set_title(f'{ood_env_name}\nStates Reconstruction Error')
+    axs[2].set_title(f'{ood_env_name}\nStates Reconstruction Error', fontsize=20)
     axs[2].set_xlim(x_min, x_max)
     axs[2].set_ylim(y_min, y_max)
     axs[2].set_aspect('equal')
     axs[2].grid(alpha=0.3)
 
     cbar = fig.colorbar(sc2, ax=axs[1:], fraction=0.046, pad=0.04)
-    cbar.set_label('Reconstruction Error', fontsize=14)
+    cbar.set_label('Reconstruction Error', fontsize=20)
 
     save_dir = f"results/visualization/state_error/{args.env}"
     os.makedirs(save_dir, exist_ok=True)
-    tsne_save_path = os.path.join(save_dir, f"{args.env}_{args.ood_env}_nlevels{args.state_n_levels}.png")
+    tsne_save_path = os.path.join(save_dir, f"{args.env}_{args.ood_env}_nlevels{args.state_n_levels}.pdf")
     plt.savefig(tsne_save_path, dpi=300, bbox_inches='tight')
     print(f"Saved state reconstruction error visualization to {tsne_save_path}")
     plt.close()
@@ -194,15 +194,15 @@ def visualize_state_error(orig_states, ood_states, orig_errors, ood_errors, env_
     plt.xlabel('Reconstruction Error')
     plt.ylabel('Density')
     plt.title('Reconstruction Error Distribution')
-    plt.legend()
+    plt.legend(fontsize=16)
     plt.grid(True, alpha=0.3)
-    hist_save_path = os.path.join(save_dir, f"{args.env}_{args.ood_env}_nlevels{args.state_n_levels}_hist.png")
+    hist_save_path = os.path.join(save_dir, f"{args.env}_{args.ood_env}_nlevels{args.state_n_levels}_hist.pdf")
     plt.savefig(hist_save_path, dpi=300, bbox_inches='tight')
     print(f"Saved state reconstruction error histogram to {hist_save_path}")
     plt.close()
 
 
-def visualize_state_action_error(orig_states, orig_actions, ood_states, ood_actions, orig_errors, ood_errors, env_name, ood_env_name):
+# def visualize_state_action_error(orig_states, orig_actions, ood_states, ood_actions, orig_errors, ood_errors, env_name, ood_env_name):
     orig_state_actions = np.hstack([orig_states, orig_actions])
     ood_state_actions = np.hstack([ood_states, ood_actions])
     all_state_actions = np.vstack([orig_state_actions, ood_state_actions])
@@ -225,8 +225,8 @@ def visualize_state_action_error(orig_states, orig_actions, ood_states, ood_acti
                   c='blue', s=5, alpha=0.6, label=env_name)
     axs[0].scatter(ood_embeddings[:, 0], ood_embeddings[:, 1], 
                   c='red', s=5, alpha=0.6, label=ood_env_name)
-    axs[0].set_title('State-Action Distribution')
-    axs[0].legend()
+    axs[0].set_title('State-Action Distribution', fontsize=20)
+    axs[0].legend(fontsize=16)
     axs[0].set_xlim(x_min, x_max)
     axs[0].set_ylim(y_min, y_max)
     axs[0].set_aspect('equal')
@@ -235,7 +235,7 @@ def visualize_state_action_error(orig_states, orig_actions, ood_states, ood_acti
     sc1 = axs[1].scatter(orig_embeddings[:, 0], orig_embeddings[:, 1], 
                        c=orig_errors, cmap='viridis', s=5, alpha=0.7,
                        vmin=global_min, vmax=global_max)
-    axs[1].set_title(f'{env_name}\nReconstruction Error')
+    axs[1].set_title(f'{env_name}\nReconstruction Error', fontsize=20)
     axs[1].set_xlim(x_min, x_max)
     axs[1].set_ylim(y_min, y_max)
     axs[1].set_aspect('equal')
@@ -244,35 +244,204 @@ def visualize_state_action_error(orig_states, orig_actions, ood_states, ood_acti
     sc2 = axs[2].scatter(ood_embeddings[:, 0], ood_embeddings[:, 1], 
                        c=ood_errors, cmap='viridis', s=5, alpha=0.7,
                        vmin=global_min, vmax=global_max)
-    axs[2].set_title(f'{ood_env_name}\nReconstruction Error')
+    axs[2].set_title(f'{ood_env_name}\nReconstruction Error', fontsize=20)
     axs[2].set_xlim(x_min, x_max)
     axs[2].set_ylim(y_min, y_max)
     axs[2].set_aspect('equal')
     axs[2].grid(True, alpha=0.3)
 
     cbar = fig.colorbar(sc2, ax=axs[1:], fraction=0.046, pad=0.04)
-    cbar.set_label('Reconstruction Error', fontsize=14)
+    cbar.set_label('Reconstruction Error', fontsize=20)
 
     save_dir = f"results/visualization/action_error/{args.env}"
     os.makedirs(save_dir, exist_ok=True)
-    tsne_save_path = os.path.join(save_dir, f"{args.env}_{args.ood_env}_nlevels{args.action_n_levels}.png")
+    tsne_save_path = os.path.join(save_dir, f"{args.env}_{args.ood_env}_nlevels{args.action_n_levels}.pdf")
     plt.savefig(tsne_save_path, dpi=300, bbox_inches='tight')
     print(f"Saved reconstruction error visualization to {tsne_save_path}")
     plt.close()
 
-    plt.figure(figsize=(12, 6))
+    plt.figure(figsize=(8, 6))
     plt.hist(orig_errors, bins=100, alpha=0.7, label=env_name, density=True)
     plt.hist(ood_errors, bins=100, alpha=0.7, label=ood_env_name, density=True)
-    plt.xlabel('Reconstruction Error')
-    plt.ylabel('Density')
-    plt.title('Reconstruction Error Distribution')
-    plt.legend()
+    plt.xlabel('Reconstruction Error', fontsize=20)
+    plt.ylabel('Density', fontsize=20)
+    plt.title('Reconstruction Error Distribution', fontsize=20)
+    plt.legend(fontsize=16)
     plt.grid(True, alpha=0.3)
-    hist_save_path = os.path.join(save_dir, f"{args.env}_{args.ood_env}_nlevels{args.action_n_levels}_hist.png")
+    hist_save_path = os.path.join(save_dir, f"{args.env}_{args.ood_env}_nlevels{args.action_n_levels}_hist.pdf")
     plt.savefig(hist_save_path, dpi=300, bbox_inches='tight')
     print(f"Saved reconstruction error histogram to {hist_save_path}")
     plt.close()
 
+
+import matplotlib as mpl
+
+def set_plot_style():
+    plt.rcParams.update({
+        "font.size": 14,
+        "axes.titlesize": 20,
+        "axes.labelsize": 18,
+        "xtick.labelsize": 14,
+        "ytick.labelsize": 14,
+        "legend.fontsize": 16,
+    })
+
+
+def visualize_state_error(orig_states, ood_states, orig_errors, ood_errors, env_name, ood_env_name):
+    set_plot_style()
+    all_states = np.vstack([orig_states, ood_states])
+
+    global_min = min(orig_errors.min(), ood_errors.min())
+    global_max = max(orig_errors.max(), ood_errors.max())
+
+    # t-SNE 降维
+    tsne = TSNE(n_components=2, perplexity=30, n_iter=1000, random_state=42)
+    tsne_embeddings = tsne.fit_transform(all_states)
+
+    orig_embeddings = tsne_embeddings[:len(orig_states)]
+    ood_embeddings = tsne_embeddings[len(orig_states):]
+
+    # x_min, x_max = tsne_embeddings[:, 0].min() - 5, tsne_embeddings[:, 0].max() + 5
+    # y_min, y_max = tsne_embeddings[:, 1].min() - 5, tsne_embeddings[:, 1].max() + 5
+
+    x_min, x_max = -100, 100
+    y_min, y_max = -100, 100
+
+    # 1*4 布局，大小与 state-action 一致
+    fig, axs = plt.subplots(1, 4, figsize=(24, 6), constrained_layout=True)
+
+    # (a) State Distribution
+    axs[0].scatter(orig_embeddings[:, 0], orig_embeddings[:, 1], 
+                   c='blue', s=5, alpha=0.6, label=env_name)
+    axs[0].scatter(ood_embeddings[:, 0], ood_embeddings[:, 1], 
+                   c='red', s=5, alpha=0.6, label=ood_env_name)
+    axs[0].set_title('State Distribution', fontsize=20)
+    axs[0].legend(fontsize=14)
+    axs[0].set_xlim(x_min, x_max)
+    axs[0].set_ylim(y_min, y_max)
+    axs[0].set_aspect('equal')
+    axs[0].grid(alpha=0.3)
+
+    # (b) In-distribution Errors
+    sc1 = axs[1].scatter(orig_embeddings[:, 0], orig_embeddings[:, 1], 
+                         c=orig_errors, cmap='viridis', s=5, alpha=0.7,
+                         vmin=global_min, vmax=global_max)
+    axs[1].set_title(f'{env_name}\nReconstruction Error', fontsize=20)
+    axs[1].set_xlim(x_min, x_max)
+    axs[1].set_ylim(y_min, y_max)
+    axs[1].set_aspect('equal')
+    axs[1].grid(alpha=0.3)
+
+    # (c) OOD Errors
+    sc2 = axs[2].scatter(ood_embeddings[:, 0], ood_embeddings[:, 1], 
+                         c=ood_errors, cmap='viridis', s=5, alpha=0.7,
+                         vmin=global_min, vmax=global_max)
+    axs[2].set_title(f'{ood_env_name}\nReconstruction Error', fontsize=20)
+    axs[2].set_xlim(x_min, x_max)
+    axs[2].set_ylim(y_min, y_max)
+    axs[2].set_aspect('equal')
+    axs[2].grid(alpha=0.3)
+
+    # (d) Histogram
+    axs[3].hist(orig_errors, bins=100, alpha=0.7, label=env_name, density=True)
+    axs[3].hist(ood_errors, bins=100, alpha=0.7, label=ood_env_name, density=True)
+    axs[3].set_xlabel('Reconstruction Error', fontsize=18)
+    axs[3].set_ylabel('Density', fontsize=18)
+    axs[3].set_title('Error Distribution', fontsize=20)
+    axs[3].legend(fontsize=14)
+    axs[3].grid(alpha=0.3)
+
+    # Colorbar 共享 (b)(c)
+    cbar = fig.colorbar(sc2, ax=axs[1:3], fraction=0.046, pad=0.04)
+    cbar.set_label('Reconstruction Error', fontsize=18)
+
+    # 保存可视化
+    save_dir = f"results/visualization/state_error/{args.env}"
+    os.makedirs(save_dir, exist_ok=True)
+    tsne_save_path = os.path.join(save_dir, f"{args.env}_{args.ood_env}_nlevels{args.state_n_levels}.pdf")
+    plt.savefig(tsne_save_path, dpi=300, bbox_inches='tight')
+    print(f"Saved state reconstruction error visualization to {tsne_save_path}")
+    plt.close()
+
+
+def visualize_state_action_error(orig_states, orig_actions, ood_states, ood_actions, 
+                                 orig_errors, ood_errors, env_name, ood_env_name):
+    # 拼接 state-action 向量
+    orig_state_actions = np.hstack([orig_states, orig_actions])
+    ood_state_actions = np.hstack([ood_states, ood_actions])
+    all_state_actions = np.vstack([orig_state_actions, ood_state_actions])
+
+    global_min = min(orig_errors.min(), ood_errors.min())
+    global_max = max(orig_errors.max(), ood_errors.max())
+
+    # t-SNE 降维
+    tsne = TSNE(n_components=2, perplexity=30, n_iter=1000, random_state=42)
+    tsne_embeddings = tsne.fit_transform(all_state_actions)
+    
+    orig_embeddings = tsne_embeddings[:len(orig_state_actions)]
+    ood_embeddings = tsne_embeddings[len(orig_state_actions):]
+
+    # x_min, x_max = tsne_embeddings[:, 0].min() - 5, tsne_embeddings[:, 0].max() + 5
+    # y_min, y_max = tsne_embeddings[:, 1].min() - 5, tsne_embeddings[:, 1].max() + 5
+    
+    x_min, x_max = -100, 100
+    y_min, y_max = -100, 100
+
+    # 改为 1*4 子图
+    fig, axs = plt.subplots(1, 4, figsize=(24, 6), constrained_layout=True)
+
+    # (a) State-Action Distribution
+    axs[0].scatter(orig_embeddings[:, 0], orig_embeddings[:, 1], 
+                   c='blue', s=5, alpha=0.6, label=env_name)
+    axs[0].scatter(ood_embeddings[:, 0], ood_embeddings[:, 1], 
+                   c='red', s=5, alpha=0.6, label=ood_env_name)
+    axs[0].set_title('State-Action Distribution', fontsize=20)
+    axs[0].legend(fontsize=14)
+    axs[0].set_xlim(x_min, x_max)
+    axs[0].set_ylim(y_min, y_max)
+    axs[0].set_aspect('equal')
+    axs[0].grid(alpha=0.3)
+
+    # (b) In-distribution Errors
+    sc1 = axs[1].scatter(orig_embeddings[:, 0], orig_embeddings[:, 1], 
+                         c=orig_errors, cmap='viridis', s=5, alpha=0.7,
+                         vmin=global_min, vmax=global_max)
+    axs[1].set_title(f'{env_name}\nReconstruction Error', fontsize=20)
+    axs[1].set_xlim(x_min, x_max)
+    axs[1].set_ylim(y_min, y_max)
+    axs[1].set_aspect('equal')
+    axs[1].grid(alpha=0.3)
+
+    # (c) OOD Errors
+    sc2 = axs[2].scatter(ood_embeddings[:, 0], ood_embeddings[:, 1], 
+                         c=ood_errors, cmap='viridis', s=5, alpha=0.7,
+                         vmin=global_min, vmax=global_max)
+    axs[2].set_title(f'{ood_env_name}\nReconstruction Error', fontsize=20)
+    axs[2].set_xlim(x_min, x_max)
+    axs[2].set_ylim(y_min, y_max)
+    axs[2].set_aspect('equal')
+    axs[2].grid(alpha=0.3)
+
+    # (d) Histogram
+    axs[3].hist(orig_errors, bins=100, alpha=0.7, label=env_name, density=True)
+    axs[3].hist(ood_errors, bins=100, alpha=0.7, label=ood_env_name, density=True)
+    axs[3].set_xlabel('Reconstruction Error', fontsize=18)
+    axs[3].set_ylabel('Density', fontsize=18)
+    axs[3].set_title('Error Distribution', fontsize=20)
+    axs[3].legend(fontsize=14)
+    axs[3].grid(alpha=0.3)
+
+    # colorbar 共享 (b)(c)
+    cbar = fig.colorbar(sc2, ax=axs[1:3], fraction=0.046, pad=0.04)
+    cbar.set_label('Reconstruction Error', fontsize=18)
+
+    # 保存可视化
+    save_dir = f"results/visualization/action_error/{args.env}"
+    os.makedirs(save_dir, exist_ok=True)
+    tsne_save_path = os.path.join(save_dir, f"{args.env}_{args.ood_env}_nlevels{args.action_n_levels}.pdf")
+    plt.savefig(tsne_save_path, dpi=300, bbox_inches='tight')
+    print(f"Saved state-action reconstruction error visualization to {tsne_save_path}")
+    plt.close()
 
 def save_state_error(state_distribution, diffusion_model, states):
     state_error = compute_state_error(state_distribution, diffusion_model, states, args.state_n_levels, args.batch_size)

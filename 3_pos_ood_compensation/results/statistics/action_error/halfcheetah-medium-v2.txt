@@ -24,3 +24,115 @@ Median: 0.252812
 95th_percentile: 0.597943
 99th_percentile: 0.829464
 
+halfcheetah-medium-v2
+Num_levels: 1
+Mean: 0.286667
+Std: 0.166364
+Variance: 0.027677
+Max: 2.122430
+Min: 0.002692
+Median: 0.252812
+80th_percentile: 0.401017
+85th_percentile: 0.443370
+90th_percentile: 0.501355
+95th_percentile: 0.597943
+99th_percentile: 0.829464
+
+halfcheetah-medium-v2
+Num_levels: 10
+Mean: 0.286679
+Std: 0.133310
+Variance: 0.017771
+Max: 1.640015
+Min: 0.031860
+Median: 0.263076
+80th_percentile: 0.381644
+85th_percentile: 0.414463
+90th_percentile: 0.459478
+95th_percentile: 0.534568
+99th_percentile: 0.715868
+
+halfcheetah-medium-v2
+Num_levels: 10
+Mean: 0.286679
+Std: 0.133310
+Variance: 0.017771
+Max: 1.640015
+Min: 0.031860
+Median: 0.263076
+80th_percentile: 0.381644
+85th_percentile: 0.414463
+90th_percentile: 0.459478
+95th_percentile: 0.534568
+99th_percentile: 0.715868
+
+halfcheetah-medium-v2
+Num_levels: 10
+Mean: 0.286679
+Std: 0.133310
+Variance: 0.017771
+Max: 1.640015
+Min: 0.031860
+Median: 0.263076
+80th_percentile: 0.381644
+85th_percentile: 0.414463
+90th_percentile: 0.459478
+95th_percentile: 0.534568
+99th_percentile: 0.715868
+
+halfcheetah-medium-v2
+Num_levels: 10
+Mean: 0.286679
+Std: 0.133310
+Variance: 0.017771
+Max: 1.640015
+Min: 0.031860
+Median: 0.263076
+80th_percentile: 0.381644
+85th_percentile: 0.414463
+90th_percentile: 0.459478
+95th_percentile: 0.534568
+99th_percentile: 0.715868
+
+halfcheetah-medium-v2
+Num_levels: 10
+Mean: 0.286679
+Std: 0.133310
+Variance: 0.017771
+Max: 1.640015
+Min: 0.031860
+Median: 0.263076
+80th_percentile: 0.381644
+85th_percentile: 0.414463
+90th_percentile: 0.459478
+95th_percentile: 0.534568
+99th_percentile: 0.715868
+
+halfcheetah-medium-v2
+Num_levels: 10
+Mean: 0.286679
+Std: 0.133310
+Variance: 0.017771
+Max: 1.640015
+Min: 0.031860
+Median: 0.263076
+80th_percentile: 0.381644
+85th_percentile: 0.414463
+90th_percentile: 0.459478
+95th_percentile: 0.534568
+99th_percentile: 0.715868
+
+halfcheetah-medium-v2
+Num_levels: 10
+Mean: 0.286679
+Std: 0.133310
+Variance: 0.017771
+Max: 1.640015
+Min: 0.031860
+Median: 0.263076
+80th_percentile: 0.381644
+85th_percentile: 0.414463
+90th_percentile: 0.459478
+95th_percentile: 0.534568
+99th_percentile: 0.715868
+

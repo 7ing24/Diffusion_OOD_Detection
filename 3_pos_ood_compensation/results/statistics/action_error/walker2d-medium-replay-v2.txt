@@ -22,3 +22,31 @@ Median: 0.432906
 95th_percentile: 1.002348
 99th_percentile: 1.351659
 
+walker2d-medium-replay-v2
+Num_levels: 10
+Mean: 0.484919
+Std: 0.183853
+Variance: 0.033802
+Max: 1.900872
+Min: 0.071046
+Median: 0.456151
+80th_percentile: 0.627879
+85th_percentile: 0.673202
+90th_percentile: 0.733342
+95th_percentile: 0.829093
+99th_percentile: 1.023681
+
+walker2d-medium-replay-v2
+Num_levels: 10
+Mean: 0.484919
+Std: 0.183853
+Variance: 0.033802
+Max: 1.900872
+Min: 0.071046
+Median: 0.456151
+80th_percentile: 0.627879
+85th_percentile: 0.673202
+90th_percentile: 0.733342
+95th_percentile: 0.829093
+99th_percentile: 1.023681
+

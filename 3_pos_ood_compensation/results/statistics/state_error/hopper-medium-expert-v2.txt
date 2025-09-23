@@ -10,3 +10,45 @@ Median: 1.030533
 95th_percentile: 1.576342
 99th_percentile: 1.876578
 
+hopper-medium-expert-v2
+Num_levels: 10
+Mean: 1.056368
+Std: 0.294114
+Variance: 0.086503
+Max: 3.856169
+Min: 0.211196
+Median: 1.029700
+80th_percentile: 1.286196
+85th_percentile: 1.351823
+90th_percentile: 1.438588
+95th_percentile: 1.576664
+99th_percentile: 1.878075
+
+hopper-medium-expert-v2
+Num_levels: 10
+Mean: 1.056368
+Std: 0.294114
+Variance: 0.086503
+Max: 3.856169
+Min: 0.211196
+Median: 1.029700
+80th_percentile: 1.286196
+85th_percentile: 1.351823
+90th_percentile: 1.438588
+95th_percentile: 1.576664
+99th_percentile: 1.878075
+
+hopper-medium-expert-v2
+Num_levels: 10
+Mean: 1.056368
+Std: 0.294114
+Variance: 0.086503
+Max: 3.856169
+Min: 0.211196
+Median: 1.029700
+80th_percentile: 1.286196
+85th_percentile: 1.351823
+90th_percentile: 1.438588
+95th_percentile: 1.576664
+99th_percentile: 1.878075
+

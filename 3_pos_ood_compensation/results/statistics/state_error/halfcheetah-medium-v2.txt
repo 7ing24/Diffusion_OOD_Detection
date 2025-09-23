@@ -24,3 +24,115 @@ Median: 1.108115
 95th_percentile: 3.380301
 99th_percentile: 4.512742
 
+halfcheetah-medium-v2
+Num_levels: 1
+Mean: 1.384841
+Std: 0.964098
+Variance: 0.929485
+Max: 14.434833
+Min: 0.006234
+Median: 1.108115
+80th_percentile: 2.012085
+85th_percentile: 2.321540
+90th_percentile: 2.749247
+95th_percentile: 3.380301
+99th_percentile: 4.512742
+
+halfcheetah-medium-v2
+Num_levels: 10
+Mean: 1.384202
+Std: 0.353039
+Variance: 0.124637
+Max: 5.108841
+Min: 0.394352
+Median: 1.346846
+80th_percentile: 1.653513
+85th_percentile: 1.733042
+90th_percentile: 1.839261
+95th_percentile: 2.012333
+99th_percentile: 2.407752
+
+halfcheetah-medium-v2
+Num_levels: 10
+Mean: 1.384202
+Std: 0.353039
+Variance: 0.124637
+Max: 5.108841
+Min: 0.394352
+Median: 1.346846
+80th_percentile: 1.653513
+85th_percentile: 1.733042
+90th_percentile: 1.839261
+95th_percentile: 2.012333
+99th_percentile: 2.407752
+
+halfcheetah-medium-v2
+Num_levels: 10
+Mean: 1.384202
+Std: 0.353039
+Variance: 0.124637
+Max: 5.108841
+Min: 0.394352
+Median: 1.346846
+80th_percentile: 1.653513
+85th_percentile: 1.733042
+90th_percentile: 1.839261
+95th_percentile: 2.012333
+99th_percentile: 2.407752
+
+halfcheetah-medium-v2
+Num_levels: 10
+Mean: 1.384202
+Std: 0.353039
+Variance: 0.124637
+Max: 5.108841
+Min: 0.394352
+Median: 1.346846
+80th_percentile: 1.653513
+85th_percentile: 1.733042
+90th_percentile: 1.839261
+95th_percentile: 2.012333
+99th_percentile: 2.407752
+
+halfcheetah-medium-v2
+Num_levels: 10
+Mean: 1.384202
+Std: 0.353039
+Variance: 0.124637
+Max: 5.108841
+Min: 0.394352
+Median: 1.346846
+80th_percentile: 1.653513
+85th_percentile: 1.733042
+90th_percentile: 1.839261
+95th_percentile: 2.012333
+99th_percentile: 2.407752
+
+halfcheetah-medium-v2
+Num_levels: 10
+Mean: 1.384202
+Std: 0.353039
+Variance: 0.124637
+Max: 5.108841
+Min: 0.394352
+Median: 1.346846
+80th_percentile: 1.653513
+85th_percentile: 1.733042
+90th_percentile: 1.839261
+95th_percentile: 2.012333
+99th_percentile: 2.407752
+
+halfcheetah-medium-v2
+Num_levels: 10
+Mean: 1.384202
+Std: 0.353039
+Variance: 0.124637
+Max: 5.108841
+Min: 0.394352
+Median: 1.346846
+80th_percentile: 1.653513
+85th_percentile: 1.733042
+90th_percentile: 1.839261
+95th_percentile: 2.012333
+99th_percentile: 2.407752
+

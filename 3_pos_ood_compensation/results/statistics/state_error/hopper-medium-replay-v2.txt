@@ -22,3 +22,17 @@ Median: 1.122490
 95th_percentile: 1.759796
 99th_percentile: 2.096762
 
+hopper-medium-replay-v2
+Num_levels: 10
+Mean: 1.158592
+Std: 0.334964
+Variance: 0.112201
+Max: 3.905430
+Min: 0.225378
+Median: 1.122490
+80th_percentile: 1.423726
+85th_percentile: 1.499781
+90th_percentile: 1.599873
+95th_percentile: 1.759796
+99th_percentile: 2.096762
+
